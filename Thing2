@@ -1,0 +1,5 @@
+//Admin creating a team and adding themself to it as well as inviting some player
+A user tries to log in, provides username and password, and logs in successfully.
+The user then tries to set up a team, and provides a name for the new team. The user is
+now an admin for the team. The admin invites themself to the team, and accepts their own
+invitation. The team now has the user as both a player and an admin for the team.
