@@ -1,6 +1,8 @@
 import utility.DominantHand;
 
 public class Player {
+    private int height;
+    private int weight;
     private int age = -1;
     private long id;
     private String name;
@@ -32,7 +34,7 @@ public class Player {
         this.setId(this.hashCode());
     }
     
-    // Helper Functions //
+    // Utility Functions //
     
     /**
      * Simulates a player passing to another player.
