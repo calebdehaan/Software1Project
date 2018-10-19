@@ -12,8 +12,10 @@ public class Team {
 	}
 	
 	public Player removePlayer(Player p) {
-		if(roster.contains(p.getID())) {
+		if(roster.contains(p.getId())) {
 			roster.remove(p);
 		}
+		
+		return null;
 	}
 }
