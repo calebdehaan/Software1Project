@@ -7,11 +7,10 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Team {
-		if(roster.contains(p.getID())) {
-    Map<Long,Player> roster = new TreeMap<Long,Player>();
-    Map<Long,Player> alumniRoster = new TreeMap<Long,Player>();
-    List<User> adminPrivileges = new ArrayList<User>();
-    String teamName;
+    private Map<Long, Player> roster = new TreeMap<Long, Player>();
+    private Map<Long, Player> alumniRoster = new TreeMap<Long, Player>();
+    private List<User> adminPrivileges = new ArrayList<User>();
+    private String teamName;
 
     /**
      * 
@@ -19,9 +18,13 @@ public class Team {
      */
     public void addPlayer(Player p) {
         Objects.requireNonNull(p);
-        
-        if( alumniRoster.contains(p.getID()) ) {
-            roster.add(p.getID() , p );            
+
+        if (alumniRoster.containsKey(p.getID())) {
+            p = alumniRoster.get(p.getID());
+            
+            roster.putIfAbsent(p.getID(), p);
+        } else {
+            roster.putIfAbsent(p.getID(), p);
         }
     }
 
@@ -29,13 +32,13 @@ public class Team {
      * 
      * @param player p
      * @return player p
-     */
+     */ 
     public Player removePlayer(Player p) {
         Objects.requireNonNull(p);
 
-        if (roster.contains(p)) {
+        if (roster.containsKey(p)) {
             roster.remove(p);
-            alumniRoster.add(p);
+            alumniRoster.put(p.getID() , p);
         }
 
         return p;
@@ -52,7 +55,7 @@ public class Team {
             adminPrivileges.add(ad);
         }
     }
-    
+
     /**
      * 
      * @param User ad
@@ -60,11 +63,23 @@ public class Team {
      */
     public User removeAdmin(User ad) {
         Objects.requireNonNull(ad);
-        
-        if(adminPrivileges.contains(ad)) {
+
+        if (adminPrivileges.contains(ad)) {
             adminPrivileges.remove(ad);
         }
-        
+
         return ad;
+    }
+
+    public String getTeamName() {
+        return teamName;
+    }
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+    
+    public GameHandler newGame() {
+        return new GameHandler(roster);
     }
 }
