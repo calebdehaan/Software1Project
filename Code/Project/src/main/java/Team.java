@@ -79,7 +79,28 @@ public class Team {
         this.teamName = teamName;
     }
     
-    public GameHandler newGame() {
-        return new GameHandler(roster);
+    /**
+     * Returns a deep copy of the roster, using player's clone function
+     * @return deep copy of the roster
+     */
+    public Map<Long,Player> getRoster() {
+        Map<Long,Player> deepCopy = new Map<Long,Player>();
+        
+        for(Player p : roster.values() ) {
+            deepCopy.putIfAbsent( p.getID() , p.clone() );
+        }
+        
+        return deepCopy;
     }
+    
+    /**
+     * Factory Method implementation, allows for extension into new types of games
+     * @param ghFactory
+     * @return Gamehandler
+     */
+    public GameHandler newGame(GameHandlerFactory ghFactory) {
+        return ghFactory.newGame(roster);
+    }
+    
+    public 
 }
