@@ -7,6 +7,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 public class Team {
+		if(roster.contains(p.getID())) {
     Map<Long,Player> roster = new TreeMap<Long,Player>();
     Map<Long,Player> alumniRoster = new TreeMap<Long,Player>();
     List<User> adminPrivileges = new ArrayList<User>();
