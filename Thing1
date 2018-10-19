@@ -1,5 +1,0 @@
-//Player accepting invite to team and checking stats on team
-A player opens up the app. The player tries to log in by providing a username and password which are validated by the system.
-If the player logs in successfully, they can accept an invite to a team and the system adds them
-to the team. The player can now open up the team page. The player opens up the
-statistics for the team, reads them, and then logs off the system.
