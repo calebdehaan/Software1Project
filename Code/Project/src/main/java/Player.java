@@ -1,8 +1,10 @@
 import utility.DominantHand;
+import utility.Height;
+import utility.Weight;
 
 public class Player {
-    private int height;
-    private int weight;
+    private Height height;
+    private Weight weight;
     private int age = -1;
     private long id;
     private String name;
@@ -17,41 +19,46 @@ public class Player {
     private boolean injured = false;
     private int gamesPlayed = 0;
     
+    // Constants //
+    private static final int AGE_MIN = 10;
+    private static final int AGE_MAX = 100;
+    private static final long ID_MIN = 0;
+    private static final long ID_MAX = 2L * Integer.MAX_VALUE + 1; // Full integer range
     
     // Constructors //
+    public Player() {
+        this(new Height(0,0), new Weight(0F), AGE_MIN, "none", DominantHand.Right);
+    }
+    
     public Player(String name) {
-        this(name, -1, DominantHand.Right);
+        this(new Height(0,0), new Weight(0F), AGE_MIN, name, DominantHand.Right);
     }
     
-    public Player(String name, int age) {
-        this(name, age, DominantHand.Right);
-    }
-    
-    public Player(String name, int age, DominantHand hand) {
-        this.setName(name);
+    public Player(Height height, Weight weight, int age, String name, DominantHand domHand) {
+        this.setWeight(weight);
+        this.setHeight(height);
         this.setAge(age);
-        this.setDomHand(hand);
         this.setId(this.hashCode());
+        this.setName(name);
+        this.setDomHand(domHand);
     }
     
     // Utility Functions //
-    
-    /**
-     * Simulates a player passing to another player.
-     *
-     * @param p           The receiving player
-     * @param didComplete True if the pass was received by the intended player, otherwise false
-     */
-    public void passTo(Player p, boolean didComplete) {
-        this.passes++;
-        if (didComplete) { // TODO: Pass completion logic in here or seperate?
-            p.catches++;
-        }
+    public Player clone(){
+        Player p = new Player();
+        
+        p.setWeight(weight);
+        p.setHeight(height);
+        p.setAge(age);
+        p.setId(this.getId());
+        p.setName(name);
+        p.setDomHand(domHand);
+        
+        return p;
     }
     
     
-    
-    
+    // TODO: Validate input in setters
     // Generated //
     @Override
     public boolean equals(Object o) {
@@ -105,5 +112,77 @@ public class Player {
     
     public void setDomHand(DominantHand domHand) {
         this.domHand = domHand;
+    }
+    
+    public Height getHeight() {
+        return height;
+    }
+    
+    public void setHeight(Height height) {
+        this.height = height;
+    }
+    
+    public Weight getWeight() {
+        return weight;
+    }
+    
+    public void setWeight(Weight weight) {
+        this.weight = weight;
+    }
+    
+    public int getPasses() {
+        return passes;
+    }
+    
+    public void setPasses(int passes) {
+        this.passes = passes;
+    }
+    
+    public int getCatches() {
+        return catches;
+    }
+    
+    public void setCatches(int catches) {
+        this.catches = catches;
+    }
+    
+    public int getScores() {
+        return scores;
+    }
+    
+    public void setScores(int scores) {
+        this.scores = scores;
+    }
+    
+    public int getFouls() {
+        return fouls;
+    }
+    
+    public void setFouls(int fouls) {
+        this.fouls = fouls;
+    }
+    
+    public int getInjuries() {
+        return injuries;
+    }
+    
+    public void setInjuries(int injuries) {
+        this.injuries = injuries;
+    }
+    
+    public boolean isInjured() {
+        return injured;
+    }
+    
+    public void setInjured(boolean injured) {
+        this.injured = injured;
+    }
+    
+    public int getGamesPlayed() {
+        return gamesPlayed;
+    }
+    
+    public void setGamesPlayed(int gamesPlayed) {
+        this.gamesPlayed = gamesPlayed;
     }
 }
