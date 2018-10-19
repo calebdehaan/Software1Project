@@ -1,9 +1,11 @@
+import DataBase.Player;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Map;
 
 public class GameHandler {
-    private Map<Long,Player> playerList;
+    private Map<Long, Player> playerList;
     private Deque<Action> stack = new ArrayDeque<Action>();
     
     GameHandler(Map<Long,Player> roster){

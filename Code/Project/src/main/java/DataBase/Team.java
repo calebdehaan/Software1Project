@@ -1,10 +1,6 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
+package DataBase;
+
+import java.util.*;
 
 public class Team {
     private Map<Long, Player> roster = new TreeMap<Long, Player>();

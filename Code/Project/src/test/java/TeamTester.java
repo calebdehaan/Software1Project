@@ -1,5 +1,7 @@
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import DataBase.Player;
+import DataBase.Team;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
