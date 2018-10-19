@@ -1,26 +1,53 @@
 import utility.DominantHand;
 
 public class Player {
-    private int age;
+    private int age = -1;
     private long id;
     private String name;
-    private DominantHand domHand;
+    private DominantHand domHand = DominantHand.Right;
+    
+    // Game Stats //
+    private int passes = 0;
+    private int catches = 0; // TODO: Need this?
+    private int scores = 0;
+    private int fouls = 0;
+    private int injuries = 0;
+    private boolean injured = false;
+    private int gamesPlayed = 0;
     
     
-    public Player(String name){
+    // Constructors //
+    public Player(String name) {
         this(name, -1, DominantHand.Right);
     }
     
-    public Player(String name, int age){
+    public Player(String name, int age) {
         this(name, age, DominantHand.Right);
     }
     
-    public Player(String name, int age, DominantHand hand){
+    public Player(String name, int age, DominantHand hand) {
         this.setName(name);
         this.setAge(age);
         this.setDomHand(hand);
         this.setId(this.hashCode());
     }
+    
+    // Helper Functions //
+    
+    /**
+     * Simulates a player passing to another player.
+     *
+     * @param p           The receiving player
+     * @param didComplete True if the pass was received by the intended player, otherwise false
+     */
+    public void passTo(Player p, boolean didComplete) {
+        this.passes++;
+        if (didComplete) { // TODO: Pass completion logic in here or seperate?
+            p.catches++;
+        }
+    }
+    
+    
     
     
     // Generated //
