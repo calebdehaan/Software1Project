@@ -1,7 +1,7 @@
 package utility;
 
 public class Height {
-    Unit units;
+    private Unit units;
     
     // Assumed to be metric
     private int majorUnit, minorUnit;

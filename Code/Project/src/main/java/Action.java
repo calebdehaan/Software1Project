@@ -1,5 +1,5 @@
 
 public interface Action {
-    public String getDesc();
-    public void updateStats();
+    String getDesc();
+    void updateStats();
 }
