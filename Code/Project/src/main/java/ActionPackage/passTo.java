@@ -3,7 +3,6 @@ package ActionPackage;
 import javafx.util.Pair;
 
 public class PassTo extends Action {
-    
     PassTo(Long id, ActionEnum e) {
         super(id);
         this.description = "";
