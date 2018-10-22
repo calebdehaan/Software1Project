@@ -1,15 +1,9 @@
 package ActionPackage;
 
-import javafx.util.Pair;
-
 public abstract class Action {
     protected ActionEnum actionName = ActionEnum.NOTHING;
     protected Long playerId;
     protected String description;
-    
-    public Pair<Long, ActionEnum> updateStats() {
-        return new Pair<Long,ActionEnum>(playerId, actionName);
-    }
     
     public void visit(ActionVisitor av) {
         av.accept(this);

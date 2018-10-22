@@ -1,16 +1,12 @@
 package ActionPackage;
 
-import javafx.util.Pair;
-
 public class PassTo extends Action {
-    PassTo(Long id, ActionEnum e) {
+	Boolean complete;
+    PassTo(Long id, ActionEnum e, String desc, Boolean c) {
         super(id);
         this.description = "";
         this.actionName = e;
-    }
-    
-    PassTo(Long id, String desc) {
-        super(id);
+        this.complete = c;
         this.description = desc;
     }
     
@@ -19,9 +15,10 @@ public class PassTo extends Action {
         return this.description;
     }
     
-    @Override
-    public Pair<Long, ActionEnum> updateStats() {
-        return new Pair<Long, ActionEnum>(playerId, ActionEnum.PASSCOMPLETE);
+    public void updateStats() {
+    	if(this.actionName.equals(ActionEnum.PASSCOMPLETE)) {
+    		
+    	}
     }
     
     @Override
