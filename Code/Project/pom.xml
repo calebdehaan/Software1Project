@@ -67,7 +67,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>Main</mainClass>
+							<mainClass>graphicalUserInterface.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
