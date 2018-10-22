@@ -2,43 +2,44 @@ package ActionPackage;
 
 public abstract class Action {
     protected ActionEnum actionName = ActionEnum.NOTHING;
-    protected Long playerId;
+    protected Long playerOneId;
+    protected Long playerTwoId;
     protected String description;
     
     public void visit(ActionVisitor av) {
         av.accept(this);
     }
     
-    public Action(Long id) {
-        this(id, "");
+    public Action(Long id, Long idTwo) {
+        this.playerOneId = id;
+        this.playerTwoId = idTwo;
+        this.description = "";
     }
     
-    public Action(Long id, String desc){
-        this.setPlayerId(id);
-        this.setDescription(desc);
+    public Action(Long id, Long idTwo, String desc){
+        this.playerOneId = id;
+        this.playerTwoId = idTwo;
+        this.description = desc;
     }
     
-    public Long getPlayerId() {
-        return playerId;
+    public Long getThrowerId() {
+        return playerOneId;
     }
     
-    public void setPlayerId(Long playerId) {
-        this.playerId = playerId;
+    public Long getCatcherId() {
+        return playerTwoId;
     }
     
     public String getDescription() {
         return description;
     }
     
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    
     @Override
     public String toString() {
         return "Action{" +
                        "actionName=" + actionName +
-                       ", playerId=" + playerId +
+                       ", thrower id=" + playerOneId +
+                       ", catcher id=" + playerTwoId +
                        ", description='" + description + '\'' +
                        '}';
     }
@@ -51,15 +52,21 @@ public abstract class Action {
         Action action = (Action) o;
         
         if (actionName != action.actionName) return false;
-        if (!playerId.equals(action.playerId)) return false;
+        if (!playerOneId.equals(action.playerOneId)) return false;
+        if (!playerTwoId.equals(action.playerTwoId)) return false;
         return description.equals(action.description);
     }
     
     @Override
     public int hashCode() {
         int result = actionName.hashCode();
-        result = 31 * result + playerId.hashCode();
+        result = 31 * result + playerOneId.hashCode();
+        result = 31 * result + playerTwoId.hashCode();
         result = 31 * result + description.hashCode();
         return result;
+    }
+    
+    public ActionEnum getActionName() {
+    	return this.actionName;
     }
 }

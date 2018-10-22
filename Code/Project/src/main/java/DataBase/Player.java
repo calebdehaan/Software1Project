@@ -14,12 +14,15 @@ public class Player {
     
     // Game Stats //
     private int passes = 0;
+    private int completions = 0;
     private int catches = 0; // TODO: Need this?
     private int scores = 0;
     private int fouls = 0;
     private int injuries = 0;
     private boolean injured = false;
     private int gamesPlayed = 0;
+    
+    private double completionRate = 0.0;
     
     // Constants //
     private static final int AGE_MIN = 10;
@@ -187,4 +190,33 @@ public class Player {
     public void setGamesPlayed(int gamesPlayed) {
         this.gamesPlayed = gamesPlayed;
     }
+    
+    public void incrementCatch() {
+    	this.catches++;
+    }
+    
+    public void incrementCompletions() {
+    	this.passes++;
+    	this.setCompletions(this.getCompletions() + 1);
+    }
+    
+    public void incrementThrows() {
+    	this.passes++;
+    }
+
+	public int getCompletions() {
+		return completions;
+	}
+
+	public void setCompletions(int completions) {
+		this.completions = completions;
+	}
+
+	public double getCompletionRate() {
+		return completionRate;
+	}
+
+	public void setCompletionRate() {
+		this.completionRate = this.completions/this.catches;
+	}
 }
