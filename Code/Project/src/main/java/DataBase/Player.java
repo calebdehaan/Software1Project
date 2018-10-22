@@ -1,8 +1,8 @@
 package DataBase;
 
-import utility.DominantHand;
-import utility.Height;
-import utility.Weight;
+import DataBase.utility.DominantHand;
+import DataBase.utility.Height;
+import DataBase.utility.Weight;
 
 public class Player {
     private Height height;
