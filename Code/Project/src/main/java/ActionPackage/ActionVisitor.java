@@ -10,7 +10,7 @@ public class ActionVisitor {
         //an implemented accept function.
     }
     
-    public void accept(passTo a) {
+    public void accept(PassTo a) {
         
     }
 }
