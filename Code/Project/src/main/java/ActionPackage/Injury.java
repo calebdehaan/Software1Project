@@ -1,12 +1,8 @@
 package ActionPackage;
 
 public class Injury extends Action {
-    Injury(Long id) {
-        this(id, "");
-    }
-    
-    Injury(Long id, String desc){
-        super(id);
+    Injury(Long id, Long idTwo, String desc){
+        super(id,idTwo);
         this.description = desc;
         this.actionName = ActionEnum.INJURY;
     }

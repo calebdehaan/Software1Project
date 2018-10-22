@@ -4,7 +4,6 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Map;
 import ActionPackage.*;
-import javafx.util.Pair;
 
 public class GameHandler {
     private Map<Long, Player> playerList;
@@ -23,9 +22,23 @@ public class GameHandler {
     }
     
     public void recordAll() {
-        Pair<Long, ActionEnum> temp;
+        Action temp;
         while(!stack.isEmpty()) {
-            temp = stack.getFirst().updateStats();
+            temp = stack.getFirst();
+            
+            if(temp.getActionName().equals(ActionEnum.PASSCOMPLETE)) {
+            	Long id = temp.getThrowerId();
+            	playerList.get(id).incrementCompletions();
+            	id = temp.getCatcherId();
+            	playerList.get(id).incrementCatch();
+            }
+            else if(temp.getActionName().equals(ActionEnum.PASSFAIL)) {
+            	Long id = temp.getThrowerId();
+            	playerList.get(id).incrementThrows();
+            }
+            else if(temp.getActionName().equals(ActionEnum.SCORE)) {
+            	temp.visit(new ActionVisitor());
+            }
             
             //Add to the database from here.
             //Use the Long of the pair to find the player in playerList

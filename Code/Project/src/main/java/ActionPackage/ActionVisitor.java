@@ -12,4 +12,8 @@ public class ActionVisitor {
     public void accept(Injury a){
     
     }
+    
+    public void accept(ScoreOccured a) {
+    	a.dumpStats();
+    }
 }

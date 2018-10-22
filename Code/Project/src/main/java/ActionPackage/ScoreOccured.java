@@ -1,9 +1,9 @@
 package ActionPackage;
 
 public class ScoreOccured extends Action{
-	ScoreOccured(Long id, ActionEnum n, String desc) {
-		super(id);
-		this.actionName = n;
+	ScoreOccured(Long id, Long idTwo, String desc) {
+		super(id,idTwo);
+		this.actionName = ActionEnum.SCORE;
 		this.description = desc;
 	}
 	
