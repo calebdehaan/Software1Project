@@ -5,10 +5,8 @@ import javafx.util.Pair;
 public class PassTo extends Action {
     private String description;
     
-    PassTo(Long id, ActionEnum e) {
-        super(id);
-        this.description = "";
-        this.actionName = e;
+    PassTo(Long id) {
+        this(id, "");
     }
     
     PassTo(Long id, String desc) {
@@ -17,13 +15,13 @@ public class PassTo extends Action {
     }
     
     @Override
-    public String getDescription() {
+    public String getDesc() {
         return this.description;
     }
     
     @Override
     public Pair<Long, ActionEnum> updateStats() {
-        return new Pair<Long, ActionEnum>(playerId, ActionEnum.PASSCOMPLETE);
+        return new Pair<>(playerId, ActionEnum.PASSCOMPLETE);
     }
     
     @Override
