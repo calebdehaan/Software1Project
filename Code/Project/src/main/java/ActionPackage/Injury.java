@@ -1,7 +1,6 @@
 package ActionPackage;
 
 public class Injury extends Action {
-    
     Injury(Long id) {
         this(id, "");
     }

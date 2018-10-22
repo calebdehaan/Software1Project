@@ -12,16 +12,12 @@ public class PassTo extends Action {
     
     PassTo(Long id, String desc) {
         super(id);
-<<<<<<< HEAD:Code/Project/src/main/java/ActionPackage/passTo.java
         this.description = desc;
     }
     
     @Override
     public String getDescription() {
         return this.description;
-=======
-        this.setDescription(desc);
->>>>>>> 62517fddeb8d3346e0390aa80ecdf8fe1967d0e6:Code/Project/src/main/java/ActionPackage/PassTo.java
     }
     
     @Override
