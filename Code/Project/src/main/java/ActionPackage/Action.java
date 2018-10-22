@@ -2,7 +2,7 @@ package ActionPackage;
 
 public abstract class Action {
     protected Long playerId;
-    protected ActionEnum actionName = ActionEnum.NOTHING;
+    protected ActionEnum actionName;
     protected String description;
     
     public void visit(ActionVisitor av) {
@@ -17,6 +17,7 @@ public abstract class Action {
     public Action(Long id, String desc) {
         this.playerId = id;
         this.description = desc;
+        this.actionName = ActionEnum.NOTHING;
     }
     
     @Override

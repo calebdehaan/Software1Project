@@ -1,9 +1,13 @@
 package DataBase;
 
+import ActionPackage.Action;
+import ActionPackage.ActionEnum;
+import ActionPackage.ActionVisitor;
+import ActionPackage.PassTo;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Map;
-import ActionPackage.*;
 
 public class GameHandler {
     private Map<Long, Player> playerList;
@@ -30,11 +34,13 @@ public class GameHandler {
             actionName = currAction.getActionName();
             
             if(actionName.equals(ActionEnum.PASSCOMPLETE)) {
-            	playerList.get(currAction.getThrowerId()).incrementCompletions();
-            	playerList.get(currAction.getCatcherId()).incrementCatch();
+                PassTo pass = (PassTo) currAction;
+            	playerList.get(pass.getThrowerId()).incrementCompletions();
+            	playerList.get(pass.getCatcherId()).incrementCatch();
             }
             else if(actionName.equals(ActionEnum.PASSFAIL)) {
-            	playerList.get(currAction.getThrowerId()).incrementThrows();
+                PassTo pass = (PassTo) currAction;
+            	playerList.get(pass.getThrowerId()).incrementThrows();
             }
             else if(actionName.equals(ActionEnum.SCORE) || actionName.equals(ActionEnum.INJURY)) {
             	currAction.visit(new ActionVisitor());

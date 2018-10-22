@@ -4,6 +4,8 @@ import DataBase.utility.DominantHand;
 import DataBase.utility.Height;
 import DataBase.utility.Weight;
 
+import java.lang.reflect.Field;
+
 public class Player {
     private Height height;
     private Weight weight;
@@ -58,6 +60,12 @@ public class Player {
         p.setId(this.getId());
         p.setName(name);
         p.setDomHand(domHand);
+        p.setInjured(injured);
+        p.setGamesPlayed(gamesPlayed);
+        
+        for(Field f : this.getClass().getDeclaredFields()){
+        
+        }
         
         return p;
     }
