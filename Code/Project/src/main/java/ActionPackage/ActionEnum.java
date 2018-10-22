@@ -7,9 +7,12 @@ public enum ActionEnum {
     INJURY(3),
     SCORE(4);
     
-    int ID;
-    
-    private ActionEnum(int id) {
+    private int ID;
+    ActionEnum(int id) {
         ID = id;
+    }
+    
+    public int getID() {
+        return ID;
     }
 }

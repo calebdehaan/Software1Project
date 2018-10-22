@@ -1,9 +1,9 @@
 package ActionPackage;
 
 public class Injury extends Action {
-    Injury(Long id, Long idTwo, String desc){
-        super(id,idTwo);
-        this.description = desc;
+    
+    Injury(Long id, String desc) {
+        super(id, desc);
         this.actionName = ActionEnum.INJURY;
     }
     
@@ -20,9 +20,10 @@ public class Injury extends Action {
     @Override
     public String toString() {
         return "Injury{" +
-                       "playerOneId=" + playerOneId +
-                       ", playerTwoId=" + playerTwoId +
+                       "playerId=" + playerId +
+                       ", actionName=" + actionName +
                        ", description='" + description + '\'' +
                        '}';
     }
+    
 }

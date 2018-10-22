@@ -6,14 +6,19 @@ public class ActionVisitor {
     }
     
     public void accept(PassTo a) {
+        // Player passed
+        if(a.actionName == ActionEnum.PASSCOMPLETE){
         
+        } else {
+        
+        }
     }
     
-    public void accept(Injury a){
-    
+    public void accept(Injury a) {
+        // Player was injured
     }
     
-    public void accept(ScoreOccured a) {
-    	a.dumpStats();
+    public void accept(Scored a) {
+        a.dumpStats();
     }
 }

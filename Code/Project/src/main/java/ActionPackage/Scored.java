@@ -1,10 +1,9 @@
 package ActionPackage;
 
-public class ScoreOccured extends Action{
-	ScoreOccured(Long id, Long idTwo, String desc) {
-		super(id,idTwo);
+public class Scored extends Action{
+	Scored(Long id, String desc) {
+		super(id, desc);
 		this.actionName = ActionEnum.SCORE;
-		this.description = desc;
 	}
 	
 	@Override
@@ -19,9 +18,9 @@ public class ScoreOccured extends Action{
     
     @Override
     public String toString() {
-        return "ScoreOccured{" +
-                       "playerOneId=" + playerOneId +
-                       ", playerTwoId=" + playerTwoId +
+        return "Scored{" +
+                       "playerId=" + playerId +
+                       ", actionName=" + actionName +
                        ", description='" + description + '\'' +
                        '}';
     }
