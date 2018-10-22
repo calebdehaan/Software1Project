@@ -11,12 +11,7 @@ public class PassTo extends Action {
     
     PassTo(Long id, String desc) {
         super(id);
-        this.description = desc;
-    }
-    
-    @Override
-    public String getDesc() {
-        return this.description;
+        this.setDescription(desc);
     }
     
     @Override

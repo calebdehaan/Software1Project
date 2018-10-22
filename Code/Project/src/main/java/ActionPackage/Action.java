@@ -7,8 +7,6 @@ public abstract class Action {
     protected Long playerId;
     protected String description;
     
-    public abstract String getDesc();
-    
     public Pair<Long, ActionEnum> updateStats() {
         return new Pair<>(playerId, actionName);
     }

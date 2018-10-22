@@ -2,7 +2,7 @@ package ActionPackage;
 
 public class ActionVisitor {
     public void accept(Action a) {
-        System.out.println(a.getDesc());
+        System.out.println(a.getDescription());
         
         //Theoretically this will never run
         //Everything will have its own implemented accept function
@@ -12,5 +12,9 @@ public class ActionVisitor {
     
     public void accept(PassTo a) {
         
+    }
+    
+    public void accept(Injury a){
+    
     }
 }

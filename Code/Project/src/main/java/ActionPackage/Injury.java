@@ -8,13 +8,13 @@ public class Injury extends Action {
     
     Injury(Long id, String desc){
         super(id);
-        this.description = desc;
+        this.setDescription(desc);
         this.actionName = ActionEnum.Injury;
     }
     
     @Override
     public String getDesc() {
-        return null;
+        return description;
     }
     
     @Override
