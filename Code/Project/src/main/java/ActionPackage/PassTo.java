@@ -20,4 +20,13 @@ public class PassTo extends Action {
         av.accept(this);
     }
     
+    @Override
+    public String toString() {
+        return "PassTo{" +
+                       "complete=" + complete +
+                       ", playerOneId=" + playerOneId +
+                       ", playerTwoId=" + playerTwoId +
+                       ", description='" + description + '\'' +
+                       '}';
+    }
 }

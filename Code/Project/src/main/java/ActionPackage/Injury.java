@@ -17,4 +17,12 @@ public class Injury extends Action {
         av.accept(this);
     }
     
+    @Override
+    public String toString() {
+        return "Injury{" +
+                       "playerOneId=" + playerOneId +
+                       ", playerTwoId=" + playerTwoId +
+                       ", description='" + description + '\'' +
+                       '}';
+    }
 }

@@ -12,6 +12,7 @@ public class MainItemsController {
 	@FXML
 	private void goCreatePlayer() throws IOException {
 		main.showCreatePlayerScene();
+		
 	}
 	
 	@FXML

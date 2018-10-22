@@ -22,22 +22,22 @@ public class GameHandler {
     }
     
     public void recordAll() {
-        Action temp;
+        Action currAction;
+        ActionEnum actionName;
+        
         while(!stack.isEmpty()) {
-            temp = stack.getFirst();
+            currAction = stack.getFirst();
+            actionName = currAction.getActionName();
             
-            if(temp.getActionName().equals(ActionEnum.PASSCOMPLETE)) {
-            	Long id = temp.getThrowerId();
-            	playerList.get(id).incrementCompletions();
-            	id = temp.getCatcherId();
-            	playerList.get(id).incrementCatch();
+            if(actionName.equals(ActionEnum.PASSCOMPLETE)) {
+            	playerList.get(currAction.getThrowerId()).incrementCompletions();
+            	playerList.get(currAction.getCatcherId()).incrementCatch();
             }
-            else if(temp.getActionName().equals(ActionEnum.PASSFAIL)) {
-            	Long id = temp.getThrowerId();
-            	playerList.get(id).incrementThrows();
+            else if(actionName.equals(ActionEnum.PASSFAIL)) {
+            	playerList.get(currAction.getThrowerId()).incrementThrows();
             }
-            else if(temp.getActionName().equals(ActionEnum.SCORE)) {
-            	temp.visit(new ActionVisitor());
+            else if(actionName.equals(ActionEnum.SCORE) || actionName.equals(ActionEnum.INJURY)) {
+            	currAction.visit(new ActionVisitor());
             }
             
             //Add to the database from here.
@@ -46,5 +46,7 @@ public class GameHandler {
             
             stack.removeFirst();
         }
+        
+        // Push data?
     }
 }

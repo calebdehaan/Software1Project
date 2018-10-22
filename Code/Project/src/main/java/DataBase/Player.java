@@ -196,7 +196,7 @@ public class Player {
     }
     
     public void incrementCompletions() {
-    	this.passes++;
+    	this.incrementThrows();
     	this.setCompletions(this.getCompletions() + 1);
     }
     

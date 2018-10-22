@@ -17,6 +17,15 @@ public class ScoreOccured extends Action{
         av.accept(this);
     }
     
+    @Override
+    public String toString() {
+        return "ScoreOccured{" +
+                       "playerOneId=" + playerOneId +
+                       ", playerTwoId=" + playerTwoId +
+                       ", description='" + description + '\'' +
+                       '}';
+    }
+    
     public void dumpStats() {
     	
     }

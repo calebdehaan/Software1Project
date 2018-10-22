@@ -11,11 +11,10 @@ public abstract class Action {
     }
     
     public Action(Long id, Long idTwo) {
-        this.playerOneId = id;
-        this.playerTwoId = idTwo;
-        this.description = "";
+        this(id, idTwo, "");
     }
     
+    // TODO: Use private setters for input validation?
     public Action(Long id, Long idTwo, String desc){
         this.playerOneId = id;
         this.playerTwoId = idTwo;
