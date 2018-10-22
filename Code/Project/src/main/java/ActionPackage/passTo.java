@@ -2,10 +2,12 @@ package ActionPackage;
 
 import javafx.util.Pair;
 
-public class passTo extends Action{
+public class PassTo extends Action{
+	Boolean complete;
     
-    passTo(Long input) {
+    PassTo(Long input, ActionEnum e) {
         super(input);
+        this.ActionName = e;
     }
 
     @Override
@@ -15,7 +17,6 @@ public class passTo extends Action{
 
     @Override
     public Pair<Long, ActionEnum> updateStats() {
-        // TODO Auto-generated method
         ActionName = ActionEnum.PASSCOMPLETE;
         
         return new Pair<Long, ActionEnum>(PlayerID, ActionName);
@@ -24,6 +25,10 @@ public class passTo extends Action{
     @Override
     public void visit(ActionVisitor av) {
         av.accept(this);
+    }
+    
+    public Boolean checkComplete() {
+    	return complete;
     }
     
 }
