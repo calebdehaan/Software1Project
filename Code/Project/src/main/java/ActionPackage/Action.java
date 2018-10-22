@@ -7,7 +7,6 @@ public abstract class Action {
     protected Long playerId;
     protected String description;
     
-    
     public Pair<Long, ActionEnum> updateStats() {
         return new Pair<Long,ActionEnum>(playerId, actionName);
     }

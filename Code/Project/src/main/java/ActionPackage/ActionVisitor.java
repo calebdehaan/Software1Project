@@ -13,4 +13,8 @@ public class ActionVisitor {
     public void accept(PassTo a) {
         
     }
+    
+    public void accept(Injury a){
+    
+    }
 }

@@ -14,7 +14,7 @@ public class Injury extends Action {
     
     @Override
     public String getDescription() {
-        return null;
+        return description;
     }
     
     @Override
