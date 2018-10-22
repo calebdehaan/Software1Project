@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalUserInterface.preGame.PreGameController">
+   <top>
+      <Label text="SELECT YOUR TEAM" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ChoiceBox layoutX="234.0" layoutY="40.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox layoutX="234.0" layoutY="76.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox layoutX="234.0" layoutY="113.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox layoutX="234.0" layoutY="151.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox layoutX="234.0" layoutY="190.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox layoutX="234.0" layoutY="233.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox layoutX="234.0" layoutY="277.0" prefHeight="25.0" prefWidth="281.0" />
+            <Text layoutX="114.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1" wrappingWidth="76.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="114.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 2" wrappingWidth="76.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="114.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 3" wrappingWidth="76.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="114.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 4" wrappingWidth="76.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="114.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 5" wrappingWidth="76.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="114.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 6" wrappingWidth="76.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="114.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 7" wrappingWidth="76.13671875">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Button layoutX="426.0" layoutY="325.0" mnemonicParsing="false" onAction="#goGame" prefHeight="25.0" prefWidth="89.0" text="Confirm" />
+            <Button layoutX="331.0" layoutY="325.0" mnemonicParsing="false" onAction="#goCancel" prefHeight="25.0" prefWidth="86.0" text="Cancel" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

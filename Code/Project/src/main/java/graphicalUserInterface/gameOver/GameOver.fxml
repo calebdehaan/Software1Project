@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalUserInterface.gameOver.GameOverController">
+   <top>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="37.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GAME OVER">
+               <font>
+                  <Font size="96.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="338.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="54.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your stats have been recorded.">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
+            <Button layoutX="189.0" layoutY="119.0" mnemonicParsing="false" onAction="#goFinished" prefHeight="76.0" prefWidth="221.0" text="HOME" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

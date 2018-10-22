@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalUserInterface.game.GameController">
+   <top>
+      <Label text="Game" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="55.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pass to?">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <ChoiceBox layoutX="110.0" layoutY="124.0" prefHeight="26.0" prefWidth="158.0" />
+            <Button layoutX="183.0" layoutY="158.0" mnemonicParsing="false" text="Confirm Pass" />
+            <Button layoutX="336.0" layoutY="67.0" mnemonicParsing="false" prefHeight="140.0" prefWidth="221.0" text="PENALTY" />
+            <Button layoutX="336.0" layoutY="233.0" mnemonicParsing="false" prefHeight="140.0" prefWidth="221.0" text="INJURY" />
+            <Button layoutX="47.0" layoutY="233.0" mnemonicParsing="false" prefHeight="140.0" prefWidth="221.0" text="SCORE" />
+            <TextField disable="true" layoutX="110.0" layoutY="78.0" mouseTransparent="true" prefHeight="25.0" prefWidth="158.0" />
+            <Text layoutX="14.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Player:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Button layoutX="47.0" layoutY="390.0" mnemonicParsing="false" onAction="#goCancel" prefHeight="25.0" prefWidth="222.0" text="CANCEL" />
+            <Button layoutX="336.0" layoutY="390.0" mnemonicParsing="false" onAction="#goGameOver" prefHeight="25.0" prefWidth="222.0" text="GAME OVER" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
