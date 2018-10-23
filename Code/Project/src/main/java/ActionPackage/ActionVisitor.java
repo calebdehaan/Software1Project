@@ -11,17 +11,32 @@ public class ActionVisitor {
         this.roster = team;
     }
     
-    public Player getPlayer(Long id){
+    /**
+     * Returns the player on the roster with id "id". Null otherwise.
+     *
+     * @param id the id of the desired player
+     * @return the player on the roster with id "id". Null otherwise.
+     */
+    public Player getPlayer(Long id) {
         return this.roster.values().stream().filter(player -> player.getId() == id).findFirst().orElse(null);
     }
     
-    
+    /**
+     * Default accept function. Should never be called.
+     *
+     * @param a the action
+     */
     public void accept(Action a) {
         System.out.println(a.getDescription());
     }
     
+    /**
+     * Increments the catch count for the catcher and completed pass count for the thrower.
+     *
+     * @param a the action
+     */
     public void accept(PassTo a) {
-        if(a.actionName == ActionEnum.PASSCOMPLETE){
+        if (a.actionName == ActionEnum.PASSCOMPLETE) {
             this.getPlayer(a.getCatcherId()).incrementCatch();
             this.getPlayer(a.getThrowerId()).incrementCompletions();
         } else {
@@ -29,11 +44,21 @@ public class ActionVisitor {
         }
     }
     
+    /**
+     * Increments the injury count for the player specified by "a". Also sets injured status to true.
+     *
+     * @param a the action
+     */
     public void accept(Injury a) {
         this.getPlayer(a.playerId).setInjured(true);
         this.getPlayer(a.playerId).setInjuries(this.getPlayer(a.playerId).getInjuries());
     }
     
+    /**
+     * Instructs a to push stats to database.
+     *
+     * @param a
+     */
     public void accept(Scored a) {
         a.dumpStats();
     }
