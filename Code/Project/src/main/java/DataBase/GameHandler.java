@@ -19,23 +19,24 @@ public class GameHandler {
         stack.add(a);
     }
     
+    /**
+     * Removes last action completed from the stack.
+     *
+     * @param a
+     */
     public void undo(Action a) {
         stack.removeLast();
     }
     
+    /**
+     * Calculates stats from the actions done throughout the game.
+     */
     public void recordAll() {
         ActionVisitor visitor = new ActionVisitor(playerList);
         
         while(!stack.isEmpty()) {
             stack.getFirst().visit(visitor);
-            
-            //Add to the database from here.
-            //Use the Long of the pair to find the player in playerList
-            //Use the enum to figure out what happened to that player
-            
             stack.removeFirst();
         }
-        
-        // Push data?
     }
 }
