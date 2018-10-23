@@ -11,7 +11,7 @@ public class GameHandler {
     private Map<Long, Player> playerList;
     private Deque<Action> stack = new ArrayDeque<Action>();
     
-    GameHandler(Map<Long,Player> roster){
+    GameHandler(Map<Long, Player> roster) {
         playerList = roster;
     }
     
@@ -34,7 +34,7 @@ public class GameHandler {
     public void recordAll() {
         ActionVisitor visitor = new ActionVisitor(playerList);
         
-        while(!stack.isEmpty()) {
+        while (!stack.isEmpty()) {
             stack.getFirst().visit(visitor);
             stack.removeFirst();
         }

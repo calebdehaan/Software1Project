@@ -5,7 +5,7 @@ import DataBase.Player;
 import java.util.Map;
 
 public class ActionVisitor {
-    Map<Long, Player> roster;
+    private Map<Long, Player> roster;
     
     public ActionVisitor(Map<Long, Player> team) {
         this.roster = team;
@@ -50,8 +50,9 @@ public class ActionVisitor {
      * @param a the action
      */
     public void accept(Injury a) {
-        this.getPlayer(a.playerId).setInjured(true);
-        this.getPlayer(a.playerId).setInjuries(this.getPlayer(a.playerId).getInjuries());
+        Player p = this.getPlayer(a.playerId);
+        p.setInjured(true);
+        p.setInjuries(p.getInjuries() + 1);
     }
     
     /**
