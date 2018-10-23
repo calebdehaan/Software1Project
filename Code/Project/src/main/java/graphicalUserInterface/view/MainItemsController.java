@@ -18,4 +18,9 @@ public class MainItemsController {
 	private void goPreGame() throws IOException{
 		main.showPreGameScene();
 	}
+	
+	@FXML
+	private void goPlayerStats() throws IOException {
+		main.showPlayerStatsScene();
+	}
 }
