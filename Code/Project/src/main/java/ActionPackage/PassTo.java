@@ -1,7 +1,7 @@
 package ActionPackage;
 
 public class PassTo extends Action {
-    private Long playerTwoId;
+    private Long catcher;
     
     /**
      * Construct PassTo Action with id of thrower. Assumed to have failed the throw.
@@ -23,7 +23,7 @@ public class PassTo extends Action {
      */
     PassTo(Long id, Long idTwo, String desc) {
         super(id, desc);
-        this.playerTwoId = idTwo;
+        this.catcher = idTwo;
         this.actionName = ActionEnum.PASSCOMPLETE;
     }
     
@@ -40,7 +40,7 @@ public class PassTo extends Action {
     @Override
     public String toString() {
         return "PassTo{" +
-                       "catcher=" + (playerTwoId != null? playerTwoId : "null") +
+                       "catcher=" + (catcher != null? catcher : "null") +
                        ", thrower=" + playerId +
                        ", actionName=" + actionName +
                        ", description='" + description + '\'' +
@@ -55,13 +55,13 @@ public class PassTo extends Action {
         
         PassTo passTo = (PassTo) o;
     
-        return playerTwoId != null ? playerTwoId.equals(passTo.playerTwoId) : passTo.playerTwoId == null;
+        return catcher != null ? catcher.equals(passTo.catcher) : passTo.catcher == null;
     }
     
     @Override
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + (playerTwoId != null ? playerTwoId.hashCode() : 0);
+        result = 31 * result + (catcher != null ? catcher.hashCode() : 0);
         return result;
     }
     
@@ -75,7 +75,7 @@ public class PassTo extends Action {
     }
     
     public Long getCatcherId() {
-        return playerTwoId;
+        return catcher;
     }
     
     public boolean didComplete(){

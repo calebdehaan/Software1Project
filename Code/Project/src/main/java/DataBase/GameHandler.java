@@ -1,9 +1,7 @@
 package DataBase;
 
 import ActionPackage.Action;
-import ActionPackage.ActionEnum;
 import ActionPackage.ActionVisitor;
-import ActionPackage.PassTo;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -13,7 +11,7 @@ public class GameHandler {
     private Map<Long, Player> playerList;
     private Deque<Action> stack = new ArrayDeque<Action>();
     
-    GameHandler(Map<Long,Player> roster){
+    GameHandler(Map<Long, Player> roster) {
         playerList = roster;
     }
     
@@ -21,38 +19,24 @@ public class GameHandler {
         stack.add(a);
     }
     
+    /**
+     * Removes last action completed from the stack.
+     *
+     * @param a
+     */
     public void undo(Action a) {
         stack.removeLast();
     }
     
+    /**
+     * Calculates stats from the actions done throughout the game.
+     */
     public void recordAll() {
-        Action currAction;
-        ActionEnum actionName;
+        ActionVisitor visitor = new ActionVisitor(playerList);
         
-        while(!stack.isEmpty()) {
-            currAction = stack.getFirst();
-            actionName = currAction.getActionName();
-            
-            if(actionName.equals(ActionEnum.PASSCOMPLETE)) {
-                PassTo pass = (PassTo) currAction;
-            	playerList.get(pass.getThrowerId()).incrementCompletions();
-            	playerList.get(pass.getCatcherId()).incrementCatch();
-            }
-            else if(actionName.equals(ActionEnum.PASSFAIL)) {
-                PassTo pass = (PassTo) currAction;
-            	playerList.get(pass.getThrowerId()).incrementThrows();
-            }
-            else if(actionName.equals(ActionEnum.SCORE) || actionName.equals(ActionEnum.INJURY)) {
-            	currAction.visit(new ActionVisitor());
-            }
-            
-            //Add to the database from here.
-            //Use the Long of the pair to find the player in playerList
-            //Use the enum to figure out what happened to that player
-            
+        while (!stack.isEmpty()) {
+            stack.getFirst().visit(visitor);
             stack.removeFirst();
         }
-        
-        // Push data?
     }
 }

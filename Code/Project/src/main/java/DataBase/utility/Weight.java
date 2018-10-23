@@ -28,4 +28,9 @@ public class Weight {
     public void setWeight(double weight) {
         this.weight = weight;
     }
+    
+    @Override
+    public String toString() {
+        return String.valueOf(weight);
+    }
 }

@@ -1,12 +1,12 @@
 package ActionPackage;
 
-public class Scored extends Action{
-	Scored(Long id, String desc) {
-		super(id, desc);
-		this.actionName = ActionEnum.SCORE;
-	}
-	
-	@Override
+public class Scored extends Action {
+    Scored(Long id, String desc) {
+        super(id, desc);
+        this.actionName = ActionEnum.SCORE;
+    }
+    
+    @Override
     public String getDescription() {
         return this.description;
     }
@@ -26,6 +26,6 @@ public class Scored extends Action{
     }
     
     public void dumpStats() {
-    	
+    
     }
 }

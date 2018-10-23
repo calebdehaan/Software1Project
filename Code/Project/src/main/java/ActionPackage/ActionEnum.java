@@ -5,7 +5,8 @@ public enum ActionEnum {
     PASSCOMPLETE(1),
     PASSFAIL(2),
     INJURY(3),
-    SCORE(4);
+    SCORE(4),
+    PENALTY(5);
     
     private int ID;
     ActionEnum(int id) {
