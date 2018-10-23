@@ -4,6 +4,8 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -23,16 +25,51 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
+                  <Button layoutX="100.0" layoutY="93.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="Select" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView layoutX="85.0" layoutY="61.0" prefHeight="363.0" prefWidth="402.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
-                    </columns>
-                  </TableView>
+                  <TabPane layoutX="41.0" layoutY="114.0" prefHeight="463.0" prefWidth="402.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                      <Tab text="Contact Info">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView layoutX="22.0" layoutY="69.0" prefHeight="434.0" prefWidth="402.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="idColumn" prefWidth="66.0" text="id" />
+                                        <TableColumn fx:id="weightColumn" prefWidth="71.0" text="weight" />
+                                          <TableColumn fx:id="heightColumn" prefWidth="85.0" text="height" />
+                                          <TableColumn fx:id="ageColumn" prefWidth="78.0" text="age" />
+                                          <TableColumn fx:id="dominantHandColumn" prefWidth="101.0" text="dominantHand" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                      <Tab text="Game Stats">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <TableView layoutX="21.0" layoutY="34.0" prefHeight="434.0" prefWidth="402.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn prefWidth="48.0" text="Passes" />
+                                        <TableColumn prefWidth="79.0" text="Completions" />
+                                          <TableColumn prefWidth="51.0" text="Catches" />
+                                          <TableColumn prefWidth="49.0" text="Scores" />
+                                          <TableColumn prefWidth="36.0" text="Fouls" />
+                                          <TableColumn prefWidth="48.0" text="Injuries" />
+                                          <TableColumn prefWidth="90.0" text="Game Count" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
                </children>
             </AnchorPane>
         </items>

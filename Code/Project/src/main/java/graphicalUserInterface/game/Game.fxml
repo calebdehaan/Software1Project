@@ -29,7 +29,7 @@
             <Button layoutX="183.0" layoutY="158.0" mnemonicParsing="false" text="Confirm Pass" />
             <Button layoutX="336.0" layoutY="67.0" mnemonicParsing="false" prefHeight="140.0" prefWidth="221.0" text="PENALTY" />
             <Button layoutX="336.0" layoutY="233.0" mnemonicParsing="false" prefHeight="140.0" prefWidth="221.0" text="INJURY" />
-            <Button layoutX="47.0" layoutY="233.0" mnemonicParsing="false" prefHeight="140.0" prefWidth="221.0" text="SCORE" />
+            <Button layoutX="47.0" layoutY="233.0" mnemonicParsing="false" onAction="#goTurnover" prefHeight="140.0" prefWidth="221.0" text="SCORE" />
             <TextField disable="true" layoutX="110.0" layoutY="78.0" mouseTransparent="true" prefHeight="25.0" prefWidth="158.0" />
             <Text layoutX="14.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Player:">
                <font>

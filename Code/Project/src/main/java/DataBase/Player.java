@@ -8,7 +8,7 @@ public class Player implements Cloneable {
     private Height height;
     private Weight weight;
     private int age = -1;
-    private long id;
+    private Long id;
     private String name;
     private DominantHand domHand = DominantHand.Right;
     
@@ -45,7 +45,7 @@ public class Player implements Cloneable {
         this.setAge(age);
         this.setName(name);
         this.setDomHand(domHand);
-        this.setId(this.hashCode());
+        this.setId(/*this.hashCode()*/1);
     }
     
     // Utility Functions //

@@ -24,7 +24,7 @@
       <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
           <Button mnemonicParsing="false" onAction="#goCancel" text="Cancel" textAlignment="CENTER" />
-            <Button mnemonicParsing="false" text="Add" />
+            <Button mnemonicParsing="false" onAction="#goConfirm" text="Add" />
         </items>
          <padding>
             <Insets left="500.0" />
@@ -44,27 +44,22 @@
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Text layoutX="133.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Email:">
+                  <Text layoutX="131.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height (cm):">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Text layoutX="151.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height:">
+                  <Text layoutX="114.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dominant Hand:">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Text layoutX="114.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dominant Hand:">
+                  <Text layoutX="131.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight (kg):">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Text layoutX="148.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="161.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age:">
+                  <Text layoutX="162.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age:">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -73,12 +68,11 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="331.0" prefWidth="335.0">
                <children>
-                  <TextField layoutX="20.0" layoutY="14.0" prefHeight="30.0" prefWidth="300.0" />
-                  <TextField layoutX="20.0" layoutY="65.0" prefHeight="30.0" prefWidth="300.0" />
-                  <TextField layoutX="20.0" layoutY="106.0" prefHeight="30.0" prefWidth="300.0" />
-                  <ChoiceBox layoutX="20.0" layoutY="151.0" prefHeight="30.0" prefWidth="300.0" />
-                  <ChoiceBox layoutX="20.0" layoutY="195.0" prefHeight="30.0" prefWidth="300.0" />
-                  <ChoiceBox layoutX="20.0" layoutY="240.0" prefHeight="30.0" prefWidth="300.0" />
+                  <TextField fx:id="nameField" layoutX="20.0" layoutY="14.0" prefHeight="30.0" prefWidth="300.0" />
+                  <TextField fx:id="weightField" layoutX="20.0" layoutY="63.0" prefHeight="30.0" prefWidth="300.0" />
+                  <TextField fx:id="heightField" layoutX="20.0" layoutY="107.0" prefHeight="30.0" prefWidth="300.0" />
+                  <ChoiceBox fx:id="ageBox" layoutX="20.0" layoutY="151.0" prefHeight="30.0" prefWidth="300.0" />
+                  <ChoiceBox fx:id="dominantHandBox" layoutX="20.0" layoutY="197.0" prefHeight="30.0" prefWidth="300.0" />
                </children>
             </AnchorPane>
         </items>
