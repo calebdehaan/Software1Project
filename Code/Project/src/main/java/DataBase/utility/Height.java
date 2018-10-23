@@ -17,6 +17,12 @@ public class Height {
         this.setMinorUnit(minor);
     }
     
+    public Height(String input){
+        String tokens[] = input.trim().split(",");
+        this.majorUnit = Integer.valueOf(tokens[0]);
+        this.minorUnit = Integer.valueOf(tokens[1]);
+    }
+    
     public Unit getUnits() {
         return units;
     }
