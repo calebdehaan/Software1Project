@@ -39,6 +39,15 @@ public class Team {
 
         return p;
     }
+    
+    /**
+     * Returns the player on the roster with id "id". Null otherwise.
+     * @param id the id of the desired player
+     * @return the player on the roster with id "id". Null otherwise.
+     */
+    public Player getPlayer(Long id){
+        return this.roster.values().stream().filter(player -> player.getId() == id).findFirst().orElse(null);
+    }
 
     /**
      * 
@@ -59,11 +68,7 @@ public class Team {
      */
     public User removeAdmin(User ad) {
         Objects.requireNonNull(ad);
-
-        if (adminPrivileges.contains(ad)) {
-            adminPrivileges.remove(ad);
-        }
-
+        adminPrivileges.remove(ad);
         return ad;
     }
 
@@ -91,7 +96,7 @@ public class Team {
     
     /**
      * Factory Method implementation, allows for extension into new types of games
-     * @param ghFactory
+     * @param ghFactory the GameHandlerFactory
      * @return Gamehandler
      */
     public GameHandler newGame(GameHandlerFactory ghFactory) {

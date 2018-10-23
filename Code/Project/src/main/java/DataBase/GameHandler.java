@@ -1,10 +1,13 @@
 package DataBase;
 
+import ActionPackage.Action;
+import ActionPackage.ActionEnum;
+import ActionPackage.ActionVisitor;
+import ActionPackage.PassTo;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Map;
-import ActionPackage.*;
-import javafx.util.Pair;
 
 public class GameHandler {
     private Map<Long, Player> playerList;
@@ -23,9 +26,25 @@ public class GameHandler {
     }
     
     public void recordAll() {
-        Pair<Long, ActionEnum> temp;
+        Action currAction;
+        ActionEnum actionName;
+        
         while(!stack.isEmpty()) {
-            temp = stack.getFirst().updateStats();
+            currAction = stack.getFirst();
+            actionName = currAction.getActionName();
+            
+            if(actionName.equals(ActionEnum.PASSCOMPLETE)) {
+                PassTo pass = (PassTo) currAction;
+            	playerList.get(pass.getThrowerId()).incrementCompletions();
+            	playerList.get(pass.getCatcherId()).incrementCatch();
+            }
+            else if(actionName.equals(ActionEnum.PASSFAIL)) {
+                PassTo pass = (PassTo) currAction;
+            	playerList.get(pass.getThrowerId()).incrementThrows();
+            }
+            else if(actionName.equals(ActionEnum.SCORE) || actionName.equals(ActionEnum.INJURY)) {
+            	currAction.visit(new ActionVisitor());
+            }
             
             //Add to the database from here.
             //Use the Long of the pair to find the player in playerList
@@ -33,5 +52,7 @@ public class GameHandler {
             
             stack.removeFirst();
         }
+        
+        // Push data?
     }
 }
