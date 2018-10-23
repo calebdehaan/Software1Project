@@ -17,7 +17,7 @@ public class Height {
         this.setMinorUnit(minor);
     }
     
-    public Height(String input){
+    public Height(String input) throws NumberFormatException{
         String tokens[] = input.trim().split(",");
         this.majorUnit = Integer.valueOf(tokens[0]);
         this.minorUnit = Integer.valueOf(tokens[1]);
