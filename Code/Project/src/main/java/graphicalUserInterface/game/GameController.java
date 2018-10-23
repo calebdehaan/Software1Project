@@ -15,6 +15,11 @@ public class GameController {
 	
 	@FXML
 	private void goGameOver() throws IOException {
-		main.showGameOver();
+		main.showGameOverScene();
+	}
+	
+	@FXML
+	private void goTurnover() throws IOException {
+		main.showTurnoverScene();
 	}
 }

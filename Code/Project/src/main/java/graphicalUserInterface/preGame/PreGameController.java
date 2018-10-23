@@ -17,4 +17,9 @@ public class PreGameController {
 	private void goGame() throws IOException {
 		main.showGameScene();
 	}
+	
+	@FXML
+	private void goTurnover() throws IOException {
+		main.showTurnoverScene();
+	}
 }

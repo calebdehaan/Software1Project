@@ -75,10 +75,10 @@
                <children>
                   <TextField layoutX="20.0" layoutY="14.0" prefHeight="30.0" prefWidth="300.0" />
                   <TextField layoutX="20.0" layoutY="65.0" prefHeight="30.0" prefWidth="300.0" />
+                  <TextField layoutX="20.0" layoutY="106.0" prefHeight="30.0" prefWidth="300.0" />
+                  <ChoiceBox layoutX="20.0" layoutY="151.0" prefHeight="30.0" prefWidth="300.0" />
                   <ChoiceBox layoutX="20.0" layoutY="195.0" prefHeight="30.0" prefWidth="300.0" />
                   <ChoiceBox layoutX="20.0" layoutY="240.0" prefHeight="30.0" prefWidth="300.0" />
-                  <ChoiceBox layoutX="20.0" layoutY="151.0" prefHeight="30.0" prefWidth="300.0" />
-                  <TextField layoutX="20.0" layoutY="106.0" prefHeight="30.0" prefWidth="300.0" />
                </children>
             </AnchorPane>
         </items>

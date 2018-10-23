@@ -57,13 +57,27 @@ public class Main extends Application {
 		mainLayout.setCenter(createPlayer);
 	}
 
-	public static void showGameOver() throws IOException {
+	public static void showGameOverScene() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("gameOver/GameOver.fxml"));
 		BorderPane createPlayer = loader.load();
 		mainLayout.setCenter(createPlayer);
 	}
 
+	public static void showTurnoverScene() throws IOException{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("turnover/Turnover.fxml"));
+		BorderPane createPlayer = loader.load();
+		mainLayout.setCenter(createPlayer);
+	}
+	
+	public static void showPlayerStatsScene() throws IOException{
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("playerStats/PlayerStats.fxml"));
+		BorderPane createPlayer = loader.load();
+		mainLayout.setCenter(createPlayer);
+	}
+	
 	public static void main(String[] args) {
 		launch(args);
 	}

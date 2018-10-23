@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalUserInterface.game.GameController">
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalUserInterface.game.GameController">
    <top>
       <Label text="Game" textAlignment="CENTER" BorderPane.alignment="CENTER">
          <font>
@@ -35,6 +38,12 @@
             </Text>
             <Button layoutX="47.0" layoutY="390.0" mnemonicParsing="false" onAction="#goCancel" prefHeight="25.0" prefWidth="222.0" text="CANCEL" />
             <Button layoutX="336.0" layoutY="390.0" mnemonicParsing="false" onAction="#goGameOver" prefHeight="25.0" prefWidth="222.0" text="GAME OVER" />
+            <Button layoutX="80.0" layoutY="158.0" mnemonicParsing="false" onAction="#goTurnover" prefHeight="25.0" prefWidth="80.0" text="Turnover" />
+            <Label layoutX="160.0" layoutY="14.0" text="OUR TEAM'S POSSESSION">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>
