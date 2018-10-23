@@ -46,4 +46,9 @@ public class Height {
     public void setMinorUnit(int minorUnit) {
         this.minorUnit = minorUnit;
     }
+    
+    @Override
+    public String toString() {
+        return majorUnit + "." + minorUnit;
+    }
 }
