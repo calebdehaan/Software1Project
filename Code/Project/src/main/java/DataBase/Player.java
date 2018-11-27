@@ -28,8 +28,10 @@ public class Player implements Cloneable {
     public static final int AGE_MIN = 10;
     public static final int AGE_MAX = 100;
     public static final long ID_MIN = 0;
-    public static final long ID_MAX = 2L * Integer.MAX_VALUE + 1; // Full integer range
-    
+    public static final long ID_MAX = 2L * Integer.MAX_VALUE + 1; // Full integer range, no negatives
+    public static final double WEIGHT_MIN = 0; // TODO: Convert to a Weight object
+    public static final double WEIGHT_MAX = Integer.MAX_VALUE;
+
     // Constructors //
     public Player() {
         this(new Height(0, 0), new Weight(0F), AGE_MIN, "none", DominantHand.Right);
@@ -167,6 +169,7 @@ public class Player implements Cloneable {
     }
     
     public void setWeight(Weight weight) {
+        if(weight.getWeight() < WEIGHT_MAX && weight.getWeight() > WEIGHT_MIN)
         this.weight = weight;
     }
     
