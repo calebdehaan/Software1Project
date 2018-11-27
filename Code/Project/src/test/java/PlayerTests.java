@@ -16,12 +16,33 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class PlayerTests {
     private static final int NUM_TESTS = 100;
     private static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    private static Player validPlayer, twin1, twin2;
+    private static Player validPlayer, invalidPlayer;
+    private static Height validHeight, invalidHeight;
+    private static Weight validWeight, invalidWeight;
+    private static int validAge, invalidAge;
+    private static String validName, invalidName;
+    private static DominantHand validHand, invalidHand;
 
 
     @BeforeAll
     static void setup() {
-        validPlayer = new Player(new Height(6, 3), new Weight(180), 22, "Tobin", DominantHand.Right);
+        validHeight = new Height(6, 3);
+        invalidHeight = new Height(-10, 1);
+
+        validWeight = new Weight(180.7);
+        invalidWeight = new Weight(-10);
+
+        validName = "Tobin";
+        invalidName = "";
+
+        validAge = 22;
+        invalidAge = -1;
+
+        validHand = DominantHand.Right;
+        invalidHand = null;
+
+        validPlayer = new Player(validHeight, validWeight, validAge, validName, validHand);
+        invalidPlayer = null;
     }
 
     /**
@@ -63,15 +84,37 @@ public class PlayerTests {
         return builder.toString();
     }
 
+    /**
+     * Given two options, returns one pseudo-randomly.
+     *
+     * @param opt1 The first option
+     * @param opt2 The second option
+     * @param <T>  The choices' type
+     * @return See desc.
+     */
+    private static <T> T choose(T opt1, T opt2) {
+        int choice = randInt(1, 2);
+        switch (choice) {
+            case 1:
+                return opt1;
+            case 2:
+                return opt2;
+            default:
+                System.err.println("Error: Invalid choice: " + choice);
+                return null;
+        }
+    }
+
 
     @TestFactory
+    @DisplayName("Valid Value Constructor")
     List<DynamicTest> valueConstructorTestsValid() {
         List<DynamicTest> result = new ArrayList<>(NUM_TESTS);
 
         for (int i = 0; i < NUM_TESTS; i++) {
             result.add(DynamicTest.dynamicTest("Valid Player #" + i, () -> {
                 Height height = new Height(randInt(0, 10), randInt(0, 100));
-                Weight weight = new Weight(randDouble(Player.WEIGHT_MIN, Player.WEIGHT_MAX));
+                Weight weight = new Weight(randDouble(Player.WEIGHT_MIN.getWeight(), Player.WEIGHT_MAX.getWeight()));
                 int age = randInt(Player.AGE_MIN, Player.AGE_MAX);
                 String name = "Player";
                 DominantHand hand = DominantHand.values()[randInt(0, 2)];
@@ -84,18 +127,27 @@ public class PlayerTests {
     }
 
     @TestFactory
+    @DisplayName("Invalid Value Constructor")
     List<DynamicTest> valueConstructorTestsInvalid() {
         List<DynamicTest> result = new ArrayList<>(NUM_TESTS);
 
         for (int i = 0; i < NUM_TESTS - 2; i++) {
             result.add(DynamicTest.dynamicTest("Invalid Player #" + i, () -> {
-                Height height = new Height(randInt(-20, 20), randInt(-100, 100));
-                Weight weight = new Weight((new Random()).nextDouble());
-                int age = (new Random()).nextInt();
-                String name = randomString(randInt(0, 100));
-                DominantHand hand = DominantHand.values()[randInt(0, 2)];
+                Height height = choose(invalidHeight, validHeight);
+                Weight weight = choose(invalidWeight, validWeight);
+                int age = choose(invalidAge, validAge);
+                String name = choose(invalidName, validName);
+                DominantHand hand = choose(invalidHand, validHand);
 
-                assertThrows(Exception.class, () -> new Player(height, weight, age, name, hand));
+                // TODO: Select one property at a time to be invalid; get value from list?
+                assertThrows(Exception.class, () -> new Player(
+                                choose(null, height),
+                                choose(null, weight),
+                                choose(-100, age),
+                                choose(null, name),
+                                choose(null, hand)
+                        )
+                );
             }));
         }
 
@@ -126,16 +178,15 @@ public class PlayerTests {
     @Test
     @DisplayName("Valid Default Constructor")
     void defaultConstructorTestValid() {
-        twin1 = new Player("Twin");
-        twin2 = new Player("Twin");
+        Player p = new Player("Twin");
     }
 
     @Test
     @DisplayName("Invalid Default Constructor")
     void defaultConstructorTestInvalid() {
         Assertions.assertAll(
-                () -> Assertions.assertThrows(IllegalArgumentException.class, () -> twin1 = new Player("")),
-                () -> Assertions.assertThrows(IllegalArgumentException.class, () -> twin2 = new Player(null))
+                () -> Assertions.assertThrows(IllegalArgumentException.class, () -> invalidPlayer = new Player("")),
+                () -> Assertions.assertThrows(IllegalArgumentException.class, () -> invalidPlayer = new Player(null))
         );
     }
 

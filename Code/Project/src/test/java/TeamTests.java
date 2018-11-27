@@ -1,12 +1,12 @@
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import DataBase.Player;
 import DataBase.Team;
 import DataBase.User;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
-public class TeamTester {
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+public class TeamTests {
     protected Team theTeam = null;
 
     @BeforeEach
