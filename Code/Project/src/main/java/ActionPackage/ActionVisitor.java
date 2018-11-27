@@ -52,7 +52,6 @@ public class ActionVisitor {
     public void accept(Injury a) {
         Player p = this.getPlayer(a.playerId);
         p.setInjured(true);
-        p.setInjuries(p.getInjuries() + 1);
     }
     
     /**

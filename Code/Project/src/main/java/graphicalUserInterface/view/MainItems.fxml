@@ -23,7 +23,7 @@
                   <Image url="@cerny.png" />
                </image>
             </ImageView>
-            <Label layoutX="77.0" layoutY="165.0" text="Iteration 2 written by Caleb DeHaan, Hunter Michalk, Jameson Axton, and Matt Giles" />
+            <Label layoutX="77.0" layoutY="165.0" text="Iteration 3 written by Caleb DeHaan, Hunter Michalk, Jameson Axton, and Matt Giles" />
          </children>
       </AnchorPane>
    </center>
