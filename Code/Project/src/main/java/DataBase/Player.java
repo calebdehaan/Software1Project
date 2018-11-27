@@ -25,10 +25,10 @@ public class Player implements Cloneable {
     private double completionRate = 0.0;
     
     // Constants //
-    private static final int AGE_MIN = 10;
-    private static final int AGE_MAX = 100;
-    private static final long ID_MIN = 0;
-    private static final long ID_MAX = 2L * Integer.MAX_VALUE + 1; // Full integer range
+    public static final int AGE_MIN = 10;
+    public static final int AGE_MAX = 100;
+    public static final long ID_MIN = 0;
+    public static final long ID_MAX = 2L * Integer.MAX_VALUE + 1; // Full integer range
     
     // Constructors //
     public Player() {
@@ -123,6 +123,10 @@ public class Player implements Cloneable {
     }
     
     public void setName(String name) {
+        if(name ==  null || name.length() == 0) {
+            throw new IllegalArgumentException("Invalid Name: " + name);
+        }
+
         this.name = name;
     }
     
