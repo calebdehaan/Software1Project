@@ -13,7 +13,7 @@ public class CreatePlayerController {
 	private Main main;
 	
 	private ObservableList<Integer> ageBoxList = FXCollections.observableArrayList(16,17,18,19,20,21,22,23);
-	private ObservableList<DominantHand> dominantHandBoxList = FXCollections.observableArrayList(DominantHand.Right, DominantHand.Left, DominantHand.Ambidextrious);
+	private ObservableList<DominantHand> dominantHandBoxList = FXCollections.observableArrayList(DominantHand.Right, DominantHand.Left, DominantHand.Ambidextrous);
 	
 	@FXML
 	private TextField nameField;

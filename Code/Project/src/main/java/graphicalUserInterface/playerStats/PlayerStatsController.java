@@ -54,7 +54,7 @@ public class PlayerStatsController {
 		Height height = new Height(3, 2);
 		Weight weight = new Weight(34.10);
 		players.add(new Player(height, weight, 11, "John", DominantHand.Left));
-		players.add(new Player(height, weight, 45, "Bill", DominantHand.Ambidextrious));
+		players.add(new Player(height, weight, 45, "Bill", DominantHand.Ambidextrous));
 		return players;
 	}*/
 }

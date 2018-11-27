@@ -31,6 +31,6 @@ public class Weight {
     
     @Override
     public String toString() {
-        return String.valueOf(weight);
+        return String.valueOf(weight) + " " + String.valueOf(units);
     }
 }

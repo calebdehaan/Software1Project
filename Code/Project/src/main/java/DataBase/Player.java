@@ -15,7 +15,7 @@ public class Player implements Cloneable {
     // Game Stats //
     private int passes = 0;
     private int completions = 0;
-    private int catches = 0; // TODO: Need this?
+    private int catches = 0;
     private int scores = 0;
     private int fouls = 0;
     private int injuries = 0;
