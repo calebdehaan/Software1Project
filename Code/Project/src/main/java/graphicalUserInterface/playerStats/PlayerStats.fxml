@@ -42,6 +42,7 @@
                                         <TableColumn fx:id="weightColumn" prefWidth="71.0" text="weight" />
                                           <TableColumn fx:id="heightColumn" prefWidth="85.0" text="height" />
                                           <TableColumn fx:id="ageColumn" prefWidth="78.0" text="age" />
+                                          <TableColumn fx:id="nameColumn" prefWidth="78.0" text="name" />
                                           <TableColumn fx:id="dominantHandColumn" prefWidth="101.0" text="dominantHand" />
                                       </columns>
                                     </TableView>

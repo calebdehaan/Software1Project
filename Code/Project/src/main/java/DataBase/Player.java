@@ -17,8 +17,6 @@ public class Player implements Cloneable {
     private int completions = 0;
     private int catches = 0;
     private int scores = 0;
-    private int fouls = 0;
-    private int injuries = 0;
     private boolean injured = false;
     private int gamesPlayed = 0;
     
@@ -63,8 +61,6 @@ public class Player implements Cloneable {
         p.setGamesPlayed(gamesPlayed);
         p.setCompletions(completions);
         p.setCatches(catches);
-        p.setFouls(fouls);
-        p.setInjuries(injuries);
         p.setScores(scores);
         p.setCompletionRate();
         
@@ -84,8 +80,6 @@ public class Player implements Cloneable {
         if (completions != player.completions) return false;
         if (catches != player.catches) return false;
         if (scores != player.scores) return false;
-        if (fouls != player.fouls) return false;
-        if (injuries != player.injuries) return false;
         if (injured != player.injured) return false;
         if (gamesPlayed != player.gamesPlayed) return false;
         if (Double.compare(player.completionRate, completionRate) != 0) return false;
@@ -109,8 +103,6 @@ public class Player implements Cloneable {
         result = 31 * result + completions;
         result = 31 * result + catches;
         result = 31 * result + scores;
-        result = 31 * result + fouls;
-        result = 31 * result + injuries;
         result = 31 * result + (injured ? 1 : 0);
         result = 31 * result + gamesPlayed;
         temp = Double.doubleToLongBits(completionRate);
@@ -190,22 +182,6 @@ public class Player implements Cloneable {
         this.scores = scores;
     }
     
-    public int getFouls() {
-        return fouls;
-    }
-    
-    public void setFouls(int fouls) {
-        this.fouls = fouls;
-    }
-    
-    public int getInjuries() {
-        return injuries;
-    }
-    
-    public void setInjuries(int injuries) {
-        this.injuries = injuries;
-    }
-    
     public boolean isInjured() {
         return injured;
     }
@@ -253,5 +229,9 @@ public class Player implements Cloneable {
         } else {
             this.completionRate = this.completions / this.catches;
         }
+    }
+    
+    public Boolean getInjured() {
+    	return this.injured;
     }
 }

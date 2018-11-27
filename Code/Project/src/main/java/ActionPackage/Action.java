@@ -49,6 +49,10 @@ public abstract class Action {
         return result;
     }
     
+    public Long getId() {
+    	return this.playerId;
+    }
+    
     public ActionEnum getActionName() {
         return this.actionName;
     }
