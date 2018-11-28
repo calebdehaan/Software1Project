@@ -20,6 +20,21 @@
 			<version>RELEASE</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<version>10.14.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbyclient</artifactId>
+			<version>10.14.1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.12</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
@@ -60,7 +75,7 @@
 
 
 
-    </dependencies>
+	</dependencies>
 
 	<build>
 		<plugins>
