@@ -53,11 +53,11 @@ public class CreatePlayerController {
 	private void goConfirm() throws IOException, SQLException {
 		Connection dbConnection = getDBConnection();
 		Statement statement = dbConnection.createStatement();
-		String theQuery = "Insert into Player (Height, Weight, Age, Name, Hand, Passes, Completions, Catches, Scores, Injured, GamesPlayed) "
+		String theQuery = "INSERT INTO TheProjectData.Player (Height, Weight, Age, Name, Hand, Passes, Completions, Catches, Scores, Injured, GamesPlayed) "
 				+ "Values (\'" + heightField.getText() + "\', \'" + weightField.getText() + "\', \'" + ageBox.getValue()
 				+ "\', \'" + nameField.getText() + "\', \'" + dominantHandBox.getValue() + "\', \'0\', \'0\', \'0\', \'0\', \'0\', \'0\');";
 		System.out.println(theQuery);
-		statement.executeQuery(theQuery);
+		statement.execute(theQuery);
 		System.out.println("executed");
 		main.showCreateNewPlayerVerificationScene();
 		System.out.println("Hey");
