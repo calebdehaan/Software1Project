@@ -33,9 +33,7 @@ public class TeamTests {
 
     @Test
     void removeNull() {
-        assertThrows(NullPointerException.class, () -> {
-            theTeam.removePlayer(null);
-        });
+        assertThrows(NullPointerException.class, () -> theTeam.removePlayer(null));
     }
 
     @Test

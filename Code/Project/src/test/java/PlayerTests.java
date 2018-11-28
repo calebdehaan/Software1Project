@@ -219,5 +219,24 @@ public class PlayerTests {
     void cloneTestInvalid() {
         Assertions.assertThrows(NullPointerException.class, () -> ((Player) null).clone());
     }
+
+    @Test
+    @DisplayName("Valid Equals")
+    void equalsTestValid(){
+        Assertions.assertAll(
+                () -> Assertions.assertEquals(new Player("Name"), new Player("Name")),
+                () -> Assertions.assertEquals(validPlayer, validPlayer.clone())
+        );
+    }
+
+    @Test
+    @DisplayName("Invalid Equals")
+    void equalsTestInvalid(){
+        Assertions.assertAll(
+                () -> Assertions.assertNotEquals(new Player("Name"), new Player("Nombre")),
+                () -> Assertions.assertNotEquals(validPlayer, new Player("Cerny")),
+                () -> Assertions.assertNotEquals(validPlayer, null)
+        );
+    }
 }
 

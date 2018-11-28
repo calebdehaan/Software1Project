@@ -49,6 +49,17 @@ public class Height {
     
     @Override
     public String toString() {
-        return majorUnit + "." + minorUnit;
+        return majorUnit + "." + minorUnit + " " + units;
+    }
+
+    @Override
+    public boolean equals(Object that){
+        if(that instanceof Height){
+            return this.majorUnit == ((Height) that).majorUnit
+                    && this.minorUnit == ((Height) that).minorUnit
+                    && this.units == ((Height) that).units;
+        }
+
+        return false;
     }
 }

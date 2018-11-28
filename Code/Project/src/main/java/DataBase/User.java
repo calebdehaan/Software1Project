@@ -1,16 +1,25 @@
 package DataBase;
 
-import DataBase.Player;
+import java.util.Objects;
 
 public class User {
 	private long uId;
 	private String userName;
 	private Player data;
+	private static User instance = null;
 
-	public User(String userName, long id) {
+	private User(){
+		this("", 0);
+	}
+
+	private User(String userName, long id) {
 		this.setUserName(userName);
 		this.setuId(id);
 		// this.setPlayer() // TODO: Get player from database
+	}
+
+	public static User getInstance(){
+		return (instance == null? new User() : instance);
 	}
 
 	public long getuId() {
@@ -35,5 +44,34 @@ public class User {
 
 	public void setData(Player data) {
 		this.data = data;
+	}
+
+	@Override
+	public int hashCode() {
+		return super.hashCode();
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		User user = (User) o;
+		return uId == user.uId &&
+				Objects.equals(userName, user.userName) &&
+				Objects.equals(data, user.data);
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		return this; // Singleton
+	}
+
+	@Override
+	public String toString() {
+		return "User{" +
+				"uId=" + uId +
+				", userName='" + userName + '\'' +
+				", data=" + data +
+				'}';
 	}
 }
