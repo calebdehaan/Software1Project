@@ -32,11 +32,11 @@ public class Player implements Cloneable {
 
     // Constructors //
     public Player() {
-        this(new Height(0, 0), new Weight(0F), AGE_MIN, "none", DominantHand.Right);
+        this(new Height(0, 0), WEIGHT_MIN, AGE_MIN, "none", DominantHand.Right);
     }
     
     public Player(String name) {
-        this(new Height(0, 0), new Weight(0F), AGE_MIN, name, DominantHand.Right);
+        this(new Height(0, 0), WEIGHT_MIN, AGE_MIN, name, DominantHand.Right);
     }
     
     public Player(Height height, Weight weight, int age, String name, DominantHand domHand) {
@@ -77,7 +77,7 @@ public class Player implements Cloneable {
         Player player = (Player) o;
         
         if (age != player.age) return false;
-        if (id != player.id) return false;
+        //if (id != player.id) return false;
         if (passes != player.passes) return false;
         if (completions != player.completions) return false;
         if (catches != player.catches) return false;
@@ -161,7 +161,10 @@ public class Player implements Cloneable {
     }
     
     public void setWeight(Weight weight) {
-        if(weight.getWeight() < WEIGHT_MAX.getWeight() && weight.getWeight() > WEIGHT_MIN.getWeight())
+        if(weight.getWeight() > WEIGHT_MAX.getWeight() || weight.getWeight() < WEIGHT_MIN.getWeight()) {
+            throw new IllegalArgumentException("Invalid Weight: " + weight);
+        }
+
         this.weight = weight;
     }
     
@@ -234,7 +237,7 @@ public class Player implements Cloneable {
         if (this.catches == 0) {
             this.completionRate = 0;
         } else {
-            this.completionRate = this.completions / this.catches;
+            this.completionRate = this.completions / (1.0 * this.catches);
         }
     }
     
