@@ -5,12 +5,13 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 
 public class UserTests {
-    private User user1, user2;
+    private User user1, user2, clone;
 
     @BeforeAll
     public void setup(){
         user1 = User.getInstance();
         user2 = User.getInstance();
+        clone = user1.clone();
     }
 
 
@@ -40,15 +41,7 @@ public class UserTests {
     @Test
     @DisplayName("Valid Clone")
     public void cloneValid(){
-        Assertions.assertSame(user1, user1.clone());
+        Assertions.assertSame(user1, clone);
     }
-
-    @Test
-    @DisplayName("Invalid Clone")
-    public void cloneInvalid(){
-        Assertions.assertNotSame(user1, null);
-    }
-
-
 
 }
