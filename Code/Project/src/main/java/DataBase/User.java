@@ -19,7 +19,12 @@ public class User {
 	}
 
 	public static User getInstance(){
-		return (instance == null? new User() : instance);
+		if(Objects.nonNull(instance)) {
+			return instance;
+		}else {
+			instance = new User();
+			return instance;
+		}
 	}
 
 	public long getuId() {
