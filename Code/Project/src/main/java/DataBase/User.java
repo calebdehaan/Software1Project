@@ -2,6 +2,7 @@ package DataBase;
 
 import java.util.Objects;
 
+// Singleton
 public class User {
 	private long uId;
 	private String userName;
@@ -19,12 +20,7 @@ public class User {
 	}
 
 	public static User getInstance(){
-		if(Objects.nonNull(instance)) {
-			return instance;
-		}else {
-			instance = new User();
-			return instance;
-		}
+		return (instance == null? instance = new User() : instance);
 	}
 
 	public long getuId() {
@@ -67,8 +63,8 @@ public class User {
 	}
 
 	@Override
-	protected Object clone() throws CloneNotSupportedException {
-		return this; // Singleton
+	public User clone() {
+		return User.getInstance(); // Singleton
 	}
 
 	@Override
