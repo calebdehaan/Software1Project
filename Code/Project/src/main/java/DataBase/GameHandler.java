@@ -14,13 +14,13 @@ import java.util.*;
 public class GameHandler extends GameHandlerFactory{
     private static final String DB_DRIVER = "org.gjt.mm.mysql.Driver";
     private static final String DB_CONNECTION = "jdbc:mysql://localhost/Database";
-    private static final String DB_USER = "TheUser";
-    private static final String DB_PASSWORD = "UserOnly";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "Digby1097";
 
     private Map<Long, Player> playerList;
     private Deque<Action> stack = new ArrayDeque<>();
 
-    protected GameHandler() {
+    public GameHandler() {
         this(new HashMap<>());
     }
 
@@ -37,7 +37,7 @@ public class GameHandler extends GameHandlerFactory{
      *
      * @param a
      */
-    public void undo(Action a) {
+    public void undo() {
         stack.removeLast();
     }
 
@@ -46,19 +46,21 @@ public class GameHandler extends GameHandlerFactory{
      * Records in database.
      */
     public void recordAll() throws SQLException {
-        ActionVisitor visitor = new ActionVisitor(playerList);
         Connection dbConnection;
         Statement statement;
-        String query;
+        System.out.println("hey");
 
         while (!stack.isEmpty()) {
-            stack.getFirst().visit(visitor);
             dbConnection = getDBConnection();
             statement = dbConnection.createStatement();
-            //System.out.println(stack.getFirst().getId());
             if (stack.getFirst().getActionName().equals(ActionEnum.PASSCOMPLETE)) {
-                query = "UPDATE Player SET Passes = Passes + 1, Completions = Completions + 1 WHERE idPlayer = " + stack.getFirst().getId();
-                //System.out.println(query);
+                statement.execute("update theprojectdata.player set passes = passes + 1, completions = completions + 1 where idPlayer = \'" + stack.getFirst().getId() + "\';");
+            } else if(stack.getFirst().getActionName().equals(ActionEnum.PASSFAIL)) {
+            	statement.execute("update theprojectdata.player set passes = passes + 1 where idPlayer = \'" + stack.getFirst().getId() + "\';");
+            } else if(stack.getFirst().getActionName().equals(ActionEnum.INJURY)) {
+            	statement.execute("update theprojectdata.player set injured = '1' where idPlayer = \'" + stack.getFirst().getId() + "\';");
+            } else if(stack.getFirst().getActionName().equals(ActionEnum.CATCH)) {
+            	statement.execute("update theprojectdata.player set catches = catches + 1 where idPlayer = \'" + stack.getFirst().getId() + "\';");
             }
             stack.removeFirst();
         }

@@ -21,7 +21,7 @@ public class PassTo extends Action {
      * @param idTwo id of cather
      * @param desc description of what happened.
      */
-    PassTo(Long id, Long idTwo, String desc) {
+    public PassTo(Long id, Long idTwo, String desc) {
         super(id, desc);
         this.catcher = idTwo;
         this.actionName = ActionEnum.PASSCOMPLETE;
