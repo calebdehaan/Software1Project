@@ -20,7 +20,7 @@ public class TurnoverController {
 	
 	@FXML
 	private void goGame() throws IOException {
-		main.showGameScene();
+		main.showGameScene(main.getCp());
 	}
 	
 	@FXML

@@ -19,13 +19,13 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <ChoiceBox layoutX="234.0" layoutY="40.0" prefHeight="25.0" prefWidth="281.0" />
-            <ChoiceBox layoutX="234.0" layoutY="76.0" prefHeight="25.0" prefWidth="281.0" />
-            <ChoiceBox layoutX="234.0" layoutY="113.0" prefHeight="25.0" prefWidth="281.0" />
-            <ChoiceBox layoutX="234.0" layoutY="151.0" prefHeight="25.0" prefWidth="281.0" />
-            <ChoiceBox layoutX="234.0" layoutY="190.0" prefHeight="25.0" prefWidth="281.0" />
-            <ChoiceBox layoutX="234.0" layoutY="233.0" prefHeight="25.0" prefWidth="281.0" />
-            <ChoiceBox layoutX="234.0" layoutY="277.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox fx:id="Player1" layoutX="234.0" layoutY="40.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox fx:id="Player2" layoutX="234.0" layoutY="76.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox fx:id="Player3" layoutX="234.0" layoutY="113.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox fx:id="Player4" layoutX="234.0" layoutY="151.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox fx:id="Player5" layoutX="234.0" layoutY="190.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox fx:id="Player6" layoutX="234.0" layoutY="233.0" prefHeight="25.0" prefWidth="281.0" />
+            <ChoiceBox fx:id="Player7" layoutX="234.0" layoutY="277.0" prefHeight="25.0" prefWidth="281.0" />
             <Text layoutX="114.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1" wrappingWidth="76.13671875">
                <font>
                   <Font size="14.0" />

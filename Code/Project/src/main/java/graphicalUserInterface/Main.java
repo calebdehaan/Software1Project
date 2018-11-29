@@ -2,6 +2,7 @@ package graphicalUserInterface;
 
 import java.awt.desktop.ScreenSleepEvent;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,8 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	private static Stage primaryStage;
 	private static BorderPane mainLayout;
+	
+	private static ArrayList<String> cp;
 
 	@Override
 	public void start(Stage primaryStage) throws IOException {
@@ -62,10 +65,12 @@ public class Main extends Application {
 		mainLayout.setCenter(createPlayer);
 	}
 
-	public static void showGameScene() throws IOException {
+	public static void showGameScene(ArrayList<String> currentPlayers) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("game/Game.fxml"));
 		BorderPane createPlayer = loader.load();
+		cp = currentPlayers;
+		System.out.println("Hey");
 		mainLayout.setCenter(createPlayer);
 	}
 
@@ -99,5 +104,13 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
+	}
+
+	public static ArrayList<String> getCp() {
+		return cp;
+	}
+
+	public static void setCp(ArrayList<String> cp) {
+		Main.cp = cp;
 	}
 }

@@ -8,6 +8,9 @@ import javafx.fxml.FXML;
 public class GameController {
 	private Main main;
 	
+	//@FXML
+	
+	
 	@FXML
 	private void goCancel() throws IOException {
 		main.showMainItems();
