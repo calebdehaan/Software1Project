@@ -99,7 +99,12 @@ private Main main;
 				completions.setText(rs.getString("Completions").toString()) ;
 				catches.setText( rs.getString("Catches").toString());
 				scores.setText(rs.getString("Scores").toString()) ;
-				injured.setText(rs.getString("Injured").toString()) ;
+				String tempInjuredString = rs.getString("Injured").toString();
+				if("0".equals(tempInjuredString)) {
+					injured.setText("no") ;
+				} else {
+					injured.setText("yes");
+				}
 				games.setText( rs.getString("GamesPlayed").toString());
 			}
 		}
@@ -108,6 +113,12 @@ private Main main;
 	@FXML
 	private void updateStats() throws SQLException{
 		if(PlayerSelected != null) {
+			String tempInjuredString = new String();
+			if("no".equals(injured.getText().toLowerCase()) || "0".equals(injured.getText())) {
+				tempInjuredString = "0" ;
+			} else {
+				tempInjuredString = "1";
+			}
 			String query = "Update TheProjectData.Player"
 					     + " SET Name = \"" + name.getText()
 					     + "\", Height = \"" + height.getText()
@@ -118,7 +129,7 @@ private Main main;
 					     + "\", Completions = \"" + completions.getText()
 					     + "\", Catches = \"" + catches.getText()
 					     + "\", Scores = \"" + scores.getText()
-					     + "\", Injured = \"" + catches.getText()
+					     + "\", Injured = \"" + tempInjuredString
 					     + "\", GamesPlayed = \"" + games.getText()
 					     + "\" WHERE idPlayer = \"" + id.getText() + "\"";
 			System.out.println(query);
