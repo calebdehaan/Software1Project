@@ -9,7 +9,7 @@ public class PassTo extends Action {
      * @param id id of thrower
      * @param desc description of what happened.
      */
-    PassTo(Long id, String desc){
+    public PassTo(Long id, String desc){
         super(id, desc);
         this.actionName = ActionEnum.PASSFAIL;
     }
