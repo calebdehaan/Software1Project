@@ -15,6 +15,7 @@ public class PreGameController {
 	
 	@FXML
 	private void goGame() throws IOException {
+		
 		main.showGameScene();
 	}
 	
