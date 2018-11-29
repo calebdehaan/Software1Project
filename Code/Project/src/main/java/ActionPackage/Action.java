@@ -1,5 +1,7 @@
 package ActionPackage;
 
+import java.util.Objects;
+
 public abstract class Action {
     protected Long playerId;
     protected ActionEnum actionName;
@@ -9,14 +11,13 @@ public abstract class Action {
         av.accept(this);
     }
     
-    public Action(Long id) {
+    protected Action(Long id) {
         this(id,"");
     }
-    
-    // TODO: Use private setters for input validation?
-    public Action(Long id, String desc) {
-        this.playerId = id;
-        this.description = desc;
+
+    protected Action(Long id, String desc) {
+        this.setId(id);
+        this.description = Objects.requireNonNull(desc);
         this.actionName = ActionEnum.NOTHING;
     }
     
@@ -48,7 +49,13 @@ public abstract class Action {
         result = 31 * result + description.hashCode();
         return result;
     }
-    
+
+    private void setId(Long id){
+        if(id != null && id >= 0){
+            this.playerId = id;
+        }
+    }
+
     public Long getId() {
     	return this.playerId;
     }
