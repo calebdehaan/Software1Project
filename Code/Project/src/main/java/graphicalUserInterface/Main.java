@@ -25,9 +25,6 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	public static final Logger logger = Logger.getLogger(GameHandler.class.getName());
 	private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
-	private static final String DB_CONNECTION = "jdbc:mysql://localhost/";
-	private static final String DB_USER = "root";
-	private static final String DB_PASSWORD = "Digby1097";
 	private static Stage primaryStage;
 	private static BorderPane mainLayout;
 
@@ -36,21 +33,20 @@ public class Main extends Application {
 		Connection dbConnection = getDBConnection();
 		Statement statement = dbConnection.createStatement();
 		statement.execute("Create Database if not exists theprojectdata");
-		statement.execute("create table if not exists theprojectdata.player (" +
-				"`idPlayer` INT NOT NULL AUTO_INCREMENT, " + 
-				"  `Height` VARCHAR(45) NOT NULL, " + 
-				"  `Weight` VARCHAR(45) NOT NULL, " + 
-				"  `Age` INT NOT NULL, " + 
-				"  `Name` VARCHAR(45) NOT NULL, " + 
-				"  `Hand` VARCHAR(45) NOT NULL, " + 
-				"  `Passes` INT NOT NULL, " + 
-				"  `Completions` INT NOT NULL, " + 
-				"  `Catches` INT NOT NULL, " + 
-				"  `Scores` INT NOT NULL, " + 
-				"  `Injured` TINYINT NOT NULL, " + 
-				"  `GamesPlayed` INT NOT NULL)," +
-				"  PRIMARY KEY (`idPlayer`)," +
-				"  UNIQUE INDEX `idPlayer_UNIQUE` (`idPlayer` ASC) VISIBLE");
+		statement.execute("Create table if not exists theprojectdata.player (" +
+				"  idPlayer INT NOT NULL AUTO_INCREMENT, " + 
+				"  Height VARCHAR(45) NOT NULL, " + 
+				"  Weight VARCHAR(45) NOT NULL, " + 
+				"  Age INT NOT NULL, " + 
+				"  Name VARCHAR(45) NOT NULL, " + 
+				"  Hand VARCHAR(45) NOT NULL, " + 
+				"  Passes INT NOT NULL, " + 
+				"  Completions INT NOT NULL, " + 
+				"  Catches INT NOT NULL, " + 
+				"  Scores INT NOT NULL, " + 
+				"  Injured TINYINT NOT NULL, " + 
+				"  GamesPlayed INT NOT NULL, " +
+				"  PRIMARY KEY(`idPlayer`))");
 		statement.execute("CREATE TABLE IF NOT EXISTS `TheProjectData`.`Team` (" + 
 				"  `idTeam` INT NOT NULL AUTO_INCREMENT, " + 
 				"  `idPlayer` INT NOT NULL, " + 
@@ -170,7 +166,7 @@ public class Main extends Application {
 			System.exit(-1);
 		}
 		try {
-			dbConnection = DriverManager.getConnection(DB_CONNECTION, DB_USER, DB_PASSWORD);
+			dbConnection = DriverManager.getConnection("jdbc:mysql://localhost/?user=root&password=Digby1097");
 			return dbConnection;
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
