@@ -24,6 +24,7 @@
                </image>
             </ImageView>
             <Label layoutX="77.0" layoutY="165.0" text="Iteration 3 written by Caleb DeHaan, Hunter Michalk, Jameson Axton, and Matt Giles" />
+            <Button layoutX="70.0" layoutY="414.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="39.0" prefWidth="85.0" text="LOGOUT" />
          </children>
       </AnchorPane>
    </center>

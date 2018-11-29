@@ -22,7 +22,14 @@ public class Main extends Application {
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Main Application");
 		showMainView();
-		showMainItems();
+		showLoginPage();
+	}
+	
+	private void showLoginPage() throws IOException {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(Main.class.getResource("loginPage/LoginPage.fxml"));
+		BorderPane mainItems = loader.load();
+		mainLayout.setCenter(mainItems);
 	}
 
 	private void showMainView() throws IOException {
