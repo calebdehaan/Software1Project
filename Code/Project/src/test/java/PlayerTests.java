@@ -105,7 +105,6 @@ public class PlayerTests {
         }
     }
 
-
     @TestFactory
     @DisplayName("Valid Value Constructor")
     List<DynamicTest> valueConstructorTestsValid() {
@@ -150,27 +149,6 @@ public class PlayerTests {
                 );
             }));
         }
-
-        // Null Name
-        result.add(DynamicTest.dynamicTest("Invalid Player #" + (NUM_TESTS - 2), () -> {
-            Height height = new Height((int) (Math.random() * 2), (int) (Math.random() * 2));
-            Weight weight = new Weight((new Random()).nextDouble());
-            int age = (new Random()).nextInt();
-            DominantHand hand = DominantHand.values()[randInt(0, 2)];
-
-            assertThrows(Exception.class, () -> new Player(height, weight, age, null, hand));
-        }));
-
-        // Empty Name
-        result.add(DynamicTest.dynamicTest("Invalid Player #" + (NUM_TESTS - 1), () -> {
-            Height height = new Height((int) (Math.random() * 2), (int) (Math.random() * 2));
-            Weight weight = new Weight((new Random()).nextDouble());
-            int age = (new Random()).nextInt();
-            String name = "";
-            DominantHand hand = DominantHand.values()[randInt(0, 2)];
-
-            assertThrows(Exception.class, () -> new Player(height, weight, age, name, hand));
-        }));
 
         return result;
     }

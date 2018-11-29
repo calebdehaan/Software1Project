@@ -21,7 +21,7 @@ public class GameHandler {
     private static final String DB_PASSWORD = "UserOnly";
 
     private Map<Long, Player> playerList;
-    private Deque<Action> stack = new ArrayDeque<Action>();
+    private Deque<Action> stack = new ArrayDeque<>();
 
     GameHandler(Map<Long, Player> roster) {
         playerList = roster;
@@ -89,8 +89,18 @@ public class GameHandler {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         GameHandler that = (GameHandler) o;
-        return Objects.equals(playerList, that.playerList) && Objects.equals(stack, that.stack);
+
+        if (playerList != null && !playerList.isEmpty())
+            if (!Objects.equals(playerList, that.playerList))
+                return false;
+
+        if (stack != null && !stack.isEmpty())
+            if (!Objects.equals(stack, that.stack))
+                return false;
+
+        return true;
     }
 
     @Override

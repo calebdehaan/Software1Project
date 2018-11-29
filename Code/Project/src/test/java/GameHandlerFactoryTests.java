@@ -17,6 +17,7 @@ public class GameHandlerFactoryTests {
 
         g1 = GameHandlerFactory.newGame(map);
         g2 = GameHandlerFactory.newGame(map);
+
         Assertions.assertAll(
                 () -> Assertions.assertNotNull(g1),
                 () -> Assertions.assertNotNull(g2),
@@ -24,6 +25,5 @@ public class GameHandlerFactoryTests {
                 () -> Assertions.assertNotSame(g1, g2),
                 () -> Assertions.assertEquals(g1, g2)
         );
-
     }
 }
