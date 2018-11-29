@@ -3,9 +3,14 @@ package graphicalUserInterface.loginPage;
 import java.io.IOException;
 
 import graphicalUserInterface.Main;
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
+import javafx.util.Duration;
+import javafx.util.Pair;
 
 public class LoginPageController {
 	private Main main;
@@ -15,7 +20,10 @@ public class LoginPageController {
 	@FXML
 	PasswordField passwordField;
 	@FXML
-	private TextField statusField;
+	private Text statusField;
+	
+	private Pair<String, String> credentials = new Pair<>("admin", "password");
+	
 	
 	@FXML
 	private void exitProgram() {
@@ -23,23 +31,14 @@ public class LoginPageController {
 	}
 	
 	@FXML
-	private void initialize() {
-		statusField.setEditable(false);
-		statusField.setMouseTransparent(true);
-		statusField.setFocusTraversable(false);
-	}
-	
-	@FXML
 	private void goToMain() throws Exception{
 		if(usernameField.getText() != null && passwordField.getText() != null) {
-			if("admin".equals(usernameField.getText().toLowerCase()) && "password".equals(passwordField.getText())) {
-				statusField.setText("Correct credentials... logging in.");
-				Thread.sleep(1000);
+			if(credentials.getKey().equals(usernameField.getText().toLowerCase()) && credentials.getValue().equals(passwordField.getText())) {
 				main.showMainItems();
 			} else {
+				statusField.setFill(Color.rgb(255, 0, 0));
 				statusField.setText("Incorrect credentials... try again.");
 			}
 		}
-		
 	}
 }
