@@ -10,6 +10,7 @@ import javafx.scene.control.ChoiceBox;
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PreGameController {
