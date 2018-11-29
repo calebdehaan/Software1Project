@@ -9,9 +9,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 // toString uses StringBuilder, which uses the Builder Design Pattern.
 public class GameHandler extends GameHandlerFactory{
+    public static final Logger logger = Logger.getLogger(GameHandler.class.getName());
     private static final String DB_DRIVER = "org.gjt.mm.mysql.Driver";
     private static final String DB_CONNECTION = "jdbc:mysql://localhost/Database";
     private static final String DB_USER = "root";
@@ -72,19 +75,17 @@ public class GameHandler extends GameHandlerFactory{
      * @return a connection to the database
      */
     private static Connection getDBConnection() {
-        Connection dbConnection = null;
         try {
             Class.forName(DB_DRIVER);
         } catch (ClassNotFoundException e) {
-            System.out.println(e.getMessage());
+            logger.log(Level.WARNING, e.getMessage());
         }
         try {
-            dbConnection = DriverManager.getConnection(DB_CONNECTION, DB_USER, DB_PASSWORD);
-            return dbConnection;
+            return DriverManager.getConnection(DB_CONNECTION, DB_USER, DB_PASSWORD);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            logger.log(Level.WARNING, e.getMessage());
         }
-        return dbConnection;
+        return null;
     }
 
 

@@ -1,11 +1,5 @@
 package graphicalUserInterface.createNewPlayer;
 
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 import DataBase.utility.DominantHand;
 import graphicalUserInterface.Main;
 import javafx.collections.FXCollections;
@@ -13,7 +7,16 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class CreatePlayerController {
+	public static final Logger logger = Logger.getLogger(CreatePlayerController.class.getName());
 	private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
 	private static final String DB_CONNECTION = "jdbc:mysql://localhost/TheProjectData";
 	private static final String DB_USER = "root";
@@ -56,11 +59,11 @@ public class CreatePlayerController {
 		String theQuery = "INSERT INTO TheProjectData.Player (Height, Weight, Age, Name, Hand, Passes, Completions, Catches, Scores, Injured, GamesPlayed) "
 				+ "Values (\'" + heightField.getText() + "\', \'" + weightField.getText() + "\', \'" + ageBox.getValue()
 				+ "\', \'" + nameField.getText() + "\', \'" + dominantHandBox.getValue() + "\', \'0\', \'0\', \'0\', \'0\', \'0\', \'0\');";
-		System.out.println(theQuery);
+		logger.log(Level.WARNING, theQuery);
 		statement.execute(theQuery);
-		System.out.println("executed");
+		logger.log(Level.WARNING, "executed");
 		main.showCreateNewPlayerVerificationScene();
-		System.out.println("Hey");
+		logger.log(Level.WARNING, "Hey");
 	}
 
 	private static Connection getDBConnection() {
@@ -68,15 +71,15 @@ public class CreatePlayerController {
 		try {
 			Class.forName(DB_DRIVER);
 		} catch (ClassNotFoundException e) {
-			System.out.println(e.getMessage());
-			System.out.println("Failed to establish database");
+			logger.log(Level.WARNING, e.getMessage());
+			logger.log(Level.WARNING, "Failed to establish database");
 			System.exit(-1);
 		}
 		try {
 			dbConnection = DriverManager.getConnection(DB_CONNECTION, DB_USER, DB_PASSWORD);
 			return dbConnection;
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			logger.log(Level.WARNING, e.getMessage());
 		}
 		return dbConnection;
 	}

@@ -24,4 +24,9 @@ public class MainItemsController {
 	private void goPlayerStats() throws IOException {
 		main.showPlayerStatsScene();
 	}
+	
+	@FXML
+	private void exitProgram() {
+		System.exit(0);
+	}
 }
