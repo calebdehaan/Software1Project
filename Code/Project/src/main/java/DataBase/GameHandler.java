@@ -43,6 +43,7 @@ public class GameHandler extends GameHandlerFactory{
 
     /**
      * Calculates stats from the actions done throughout the game.
+     * Records in database.
      */
     public void recordAll() throws SQLException {
         ActionVisitor visitor = new ActionVisitor(playerList);
