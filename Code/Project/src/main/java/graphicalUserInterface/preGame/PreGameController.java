@@ -21,7 +21,7 @@ public class PreGameController {
 	private static final String DB_CONNECTION = "jdbc:mysql://localhost/TheProjectData";
 	private static final String DB_USER = "root";
 	private static final String DB_PASSWORD = "Digby1097";
-	
+
 	private ObservableList<String> available;
 	@FXML
 	private ChoiceBox Player1;
@@ -37,13 +37,12 @@ public class PreGameController {
 	private ChoiceBox Player6;
 	@FXML
 	private ChoiceBox Player7;
-	
-	
+
 	@FXML
 	private void goCancel() throws IOException {
 		main.showMainItems();
 	}
-	
+
 	@FXML
 	private void goGame() throws IOException, SQLException {
 		ArrayList<String> tempArray = new ArrayList<String>();
@@ -57,17 +56,18 @@ public class PreGameController {
 		Connection dbConnection = getDBConnection();
 		Statement statement = dbConnection.createStatement();
 		statement.execute("Delete from theprojectdata.currentplayers");
-		for(int i=0;i<tempArray.size();i++) {
-			statement.execute("Insert into TheProjectData.CurrentPlayers values(\'" + (i+1) + "\', \'" + tempArray.get(i) + "\');");
+		for (int i = 0; i < tempArray.size(); i++) {
+			statement.execute("Insert into TheProjectData.CurrentPlayers values(\'" + (i + 1) + "\', \'"
+					+ tempArray.get(i) + "\');");
 		}
 		main.showGameScene();
 	}
-	
+
 	@FXML
 	private void goTurnover() throws IOException {
 		main.showTurnoverScene();
 	}
-	
+
 	@FXML
 	private void initialize() throws SQLException {
 		Connection dbConnection = getDBConnection();
@@ -75,11 +75,11 @@ public class PreGameController {
 		String query = "Select name from TheProjectData.Player";
 		ArrayList<String> tempArray = new ArrayList<String>();
 		ResultSet rs = statement.executeQuery(query);
-		if(rs.next() != false) {
+		if (rs.next() != false) {
 			do {
 				logger.log(Level.WARNING, rs.getString("name"));
 				tempArray.add(rs.getString("name"));
-			}while(rs.next());
+			} while (rs.next());
 		}
 		logger.log(Level.WARNING, "howdy");
 		available = FXCollections.observableArrayList(tempArray);
@@ -91,7 +91,7 @@ public class PreGameController {
 		Player6.setItems(available);
 		Player7.setItems(available);
 	}
-	
+
 	private static Connection getDBConnection() {
 		Connection dbConnection = null;
 		try {

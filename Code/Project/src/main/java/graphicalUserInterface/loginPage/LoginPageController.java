@@ -14,26 +14,26 @@ import javafx.util.Pair;
 
 public class LoginPageController {
 	private Main main;
-	
+
 	@FXML
 	private TextField usernameField;
 	@FXML
 	PasswordField passwordField;
 	@FXML
 	private Text statusField;
-	
+
 	private Pair<String, String> credentials = new Pair<>("admin", "password");
-	
-	
+
 	@FXML
 	private void exitProgram() {
 		System.exit(0);
 	}
-	
+
 	@FXML
-	private void goToMain() throws Exception{
-		if(usernameField.getText() != null && passwordField.getText() != null) {
-			if(credentials.getKey().equals(usernameField.getText().toLowerCase()) && credentials.getValue().equals(passwordField.getText())) {
+	private void goToMain() throws Exception {
+		if (usernameField.getText() != null && passwordField.getText() != null) {
+			if (credentials.getKey().equals(usernameField.getText().toLowerCase())
+					&& credentials.getValue().equals(passwordField.getText())) {
 				main.showMainItems();
 			} else {
 				statusField.setFill(Color.rgb(255, 0, 0));

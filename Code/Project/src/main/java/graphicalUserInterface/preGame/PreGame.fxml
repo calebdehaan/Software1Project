@@ -8,63 +8,87 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalUserInterface.preGame.PreGameController">
-   <top>
-      <Label text="SELECT YOUR TEAM" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-   </top>
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <ChoiceBox fx:id="Player1" layoutX="234.0" layoutY="40.0" prefHeight="25.0" prefWidth="281.0" />
-            <ChoiceBox fx:id="Player2" layoutX="234.0" layoutY="76.0" prefHeight="25.0" prefWidth="281.0" />
-            <ChoiceBox fx:id="Player3" layoutX="234.0" layoutY="113.0" prefHeight="25.0" prefWidth="281.0" />
-            <ChoiceBox fx:id="Player4" layoutX="234.0" layoutY="151.0" prefHeight="25.0" prefWidth="281.0" />
-            <ChoiceBox fx:id="Player5" layoutX="234.0" layoutY="190.0" prefHeight="25.0" prefWidth="281.0" />
-            <ChoiceBox fx:id="Player6" layoutX="234.0" layoutY="233.0" prefHeight="25.0" prefWidth="281.0" />
-            <ChoiceBox fx:id="Player7" layoutX="234.0" layoutY="277.0" prefHeight="25.0" prefWidth="281.0" />
-            <Text layoutX="114.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1" wrappingWidth="76.13671875">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text layoutX="114.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 2" wrappingWidth="76.13671875">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text layoutX="114.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 3" wrappingWidth="76.13671875">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text layoutX="114.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 4" wrappingWidth="76.13671875">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text layoutX="114.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 5" wrappingWidth="76.13671875">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text layoutX="114.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 6" wrappingWidth="76.13671875">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Text layoutX="114.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Player 7" wrappingWidth="76.13671875">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Button layoutX="173.0" layoutY="327.0" mnemonicParsing="false" onAction="#goTurnover" prefHeight="25.0" prefWidth="122.0" text="Their Possession" />
-            <Button layoutX="257.0" layoutY="373.0" mnemonicParsing="false" onAction="#goCancel" prefHeight="25.0" prefWidth="86.0" text="Cancel" />
-            <Button layoutX="314.0" layoutY="327.0" mnemonicParsing="false" onAction="#goGame" prefHeight="25.0" prefWidth="122.0" text="Our Possession" />
-         </children>
-      </AnchorPane>
-   </center>
+<BorderPane prefHeight="500.0" prefWidth="600.0"
+	xmlns="http://javafx.com/javafx/10.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="graphicalUserInterface.preGame.PreGameController">
+	<top>
+		<Label text="SELECT YOUR TEAM" BorderPane.alignment="CENTER">
+			<font>
+				<Font size="24.0" />
+			</font>
+		</Label>
+	</top>
+	<center>
+		<AnchorPane prefHeight="200.0" prefWidth="200.0"
+			BorderPane.alignment="CENTER">
+			<children>
+				<ChoiceBox fx:id="Player1" layoutX="234.0" layoutY="40.0"
+					prefHeight="25.0" prefWidth="281.0" />
+				<ChoiceBox fx:id="Player2" layoutX="234.0" layoutY="76.0"
+					prefHeight="25.0" prefWidth="281.0" />
+				<ChoiceBox fx:id="Player3" layoutX="234.0" layoutY="113.0"
+					prefHeight="25.0" prefWidth="281.0" />
+				<ChoiceBox fx:id="Player4" layoutX="234.0" layoutY="151.0"
+					prefHeight="25.0" prefWidth="281.0" />
+				<ChoiceBox fx:id="Player5" layoutX="234.0" layoutY="190.0"
+					prefHeight="25.0" prefWidth="281.0" />
+				<ChoiceBox fx:id="Player6" layoutX="234.0" layoutY="233.0"
+					prefHeight="25.0" prefWidth="281.0" />
+				<ChoiceBox fx:id="Player7" layoutX="234.0" layoutY="277.0"
+					prefHeight="25.0" prefWidth="281.0" />
+				<Text layoutX="114.0" layoutY="58.0" strokeType="OUTSIDE"
+					strokeWidth="0.0" text="Player 1" wrappingWidth="76.13671875">
+					<font>
+						<Font size="14.0" />
+					</font>
+				</Text>
+				<Text layoutX="114.0" layoutY="94.0" strokeType="OUTSIDE"
+					strokeWidth="0.0" text="Player 2" wrappingWidth="76.13671875">
+					<font>
+						<Font size="14.0" />
+					</font>
+				</Text>
+				<Text layoutX="114.0" layoutY="131.0" strokeType="OUTSIDE"
+					strokeWidth="0.0" text="Player 3" wrappingWidth="76.13671875">
+					<font>
+						<Font size="14.0" />
+					</font>
+				</Text>
+				<Text layoutX="114.0" layoutY="169.0" strokeType="OUTSIDE"
+					strokeWidth="0.0" text="Player 4" wrappingWidth="76.13671875">
+					<font>
+						<Font size="14.0" />
+					</font>
+				</Text>
+				<Text layoutX="114.0" layoutY="207.0" strokeType="OUTSIDE"
+					strokeWidth="0.0" text="Player 5" wrappingWidth="76.13671875">
+					<font>
+						<Font size="14.0" />
+					</font>
+				</Text>
+				<Text layoutX="114.0" layoutY="251.0" strokeType="OUTSIDE"
+					strokeWidth="0.0" text="Player 6" wrappingWidth="76.13671875">
+					<font>
+						<Font size="14.0" />
+					</font>
+				</Text>
+				<Text layoutX="114.0" layoutY="295.0" strokeType="OUTSIDE"
+					strokeWidth="0.0" text="Player 7" wrappingWidth="76.13671875">
+					<font>
+						<Font size="14.0" />
+					</font>
+				</Text>
+				<Button layoutX="173.0" layoutY="327.0"
+					mnemonicParsing="false" onAction="#goTurnover" prefHeight="25.0"
+					prefWidth="122.0" text="Their Possession" />
+				<Button layoutX="257.0" layoutY="373.0"
+					mnemonicParsing="false" onAction="#goCancel" prefHeight="25.0"
+					prefWidth="86.0" text="Cancel" />
+				<Button layoutX="314.0" layoutY="327.0"
+					mnemonicParsing="false" onAction="#goGame" prefHeight="25.0"
+					prefWidth="122.0" text="Our Possession" />
+			</children>
+		</AnchorPane>
+	</center>
 </BorderPane>

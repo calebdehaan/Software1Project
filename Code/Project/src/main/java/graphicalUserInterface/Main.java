@@ -38,7 +38,7 @@ public class Main extends Application {
 		showMainView();
 		showLoginPage();
 	}
-	
+
 	private void showLoginPage() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("loginPage/LoginPage.fxml"));
@@ -119,13 +119,13 @@ public class Main extends Application {
 		BorderPane createPlayer = loader.load();
 		mainLayout.setCenter(createPlayer);
 	}
-	
+
 	public static void databaseCheck() {
-		if(!Objects.nonNull(getDBConnection())) {
-			
+		if (!Objects.nonNull(getDBConnection())) {
+
 		}
 	}
-	
+
 	private static Connection getDBConnection() {
 		Connection dbConnection = null;
 		try {

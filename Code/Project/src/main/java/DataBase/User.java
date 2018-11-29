@@ -9,7 +9,7 @@ public class User {
 	private Player data;
 	private static User instance = null;
 
-	private User(){
+	private User() {
 		this("", 0);
 	}
 
@@ -19,8 +19,8 @@ public class User {
 		// this.setPlayer() // TODO: Get player from database
 	}
 
-	public static User getInstance(){
-		return (instance == null? instance = new User() : instance);
+	public static User getInstance() {
+		return (instance == null ? instance = new User() : instance);
 	}
 
 	public long getuId() {
@@ -54,12 +54,12 @@ public class User {
 
 	@Override
 	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
 		User user = (User) o;
-		return uId == user.uId &&
-				Objects.equals(userName, user.userName) &&
-				Objects.equals(data, user.data);
+		return uId == user.uId && Objects.equals(userName, user.userName) && Objects.equals(data, user.data);
 	}
 
 	@Override
@@ -69,10 +69,6 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User{" +
-				"uId=" + uId +
-				", userName='" + userName + '\'' +
-				", data=" + data +
-				'}';
+		return "User{" + "uId=" + uId + ", userName='" + userName + '\'' + ", data=" + data + '}';
 	}
 }

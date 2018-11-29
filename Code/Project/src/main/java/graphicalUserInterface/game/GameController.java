@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import ActionPackage.Action;
 import ActionPackage.Catch;
@@ -14,6 +16,7 @@ import ActionPackage.Injury;
 import ActionPackage.PassTo;
 import DataBase.GameHandler;
 import graphicalUserInterface.Main;
+import graphicalUserInterface.createNewPlayer.CreatePlayerController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -21,6 +24,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
 public class GameController {
+	public static final Logger logger = Logger.getLogger(GameController.class.getName());
 	private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
 	private static final String DB_CONNECTION = "jdbc:mysql://localhost/TheProjectData";
 	private static final String DB_USER = "root";
@@ -97,8 +101,6 @@ public class GameController {
 				i = new Injury(rs.getLong("idPlayer"), Players1.getValue().toString() + " was injured");
 				gh.newAction(i);
 			}
-		} else {
-			System.out.println("Lit");
 		}
 	}
 
@@ -158,15 +160,15 @@ public class GameController {
 		try {
 			Class.forName(DB_DRIVER);
 		} catch (ClassNotFoundException e) {
-			System.out.println(e.getMessage());
-			System.out.println("Failed to establish database");
+			logger.log(Level.WARNING, e.getMessage());
+			logger.log(Level.SEVERE, "Failed to establish database");
 			System.exit(-1);
 		}
 		try {
 			dbConnection = DriverManager.getConnection(DB_CONNECTION, DB_USER, DB_PASSWORD);
 			return dbConnection;
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			logger.log(Level.WARNING, e.getMessage());
 		}
 		return dbConnection;
 	}

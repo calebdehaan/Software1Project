@@ -9,43 +9,69 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalUserInterface.game.GameController">
-   <top>
-      <Label text="Game" textAlignment="CENTER" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-   </top>
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Text layoutX="55.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pass to?">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <ChoiceBox fx:id="Players" layoutX="110.0" layoutY="124.0" prefHeight="26.0" prefWidth="158.0" />
-            <Button layoutX="183.0" layoutY="158.0" mnemonicParsing="false" onAction="#goCompletion" text="Confirm Pass" />
-            <Button layoutX="336.0" layoutY="67.0" mnemonicParsing="false" onAction="#goPenalty" prefHeight="140.0" prefWidth="221.0" text="PENALTY" />
-            <Button layoutX="336.0" layoutY="233.0" mnemonicParsing="false" onAction="#goInjury" prefHeight="140.0" prefWidth="221.0" text="INJURY" />
-            <Button layoutX="47.0" layoutY="233.0" mnemonicParsing="false" onAction="#goScore" prefHeight="140.0" prefWidth="221.0" text="SCORE" />
-            <TextField fx:id="textBox" disable="true" layoutX="110.0" layoutY="78.0" mouseTransparent="true" prefHeight="25.0" prefWidth="158.0" />
-            <Text layoutX="14.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Player:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <Button layoutX="47.0" layoutY="390.0" mnemonicParsing="false" onAction="#goCancel" prefHeight="25.0" prefWidth="222.0" text="CANCEL" />
-            <Button layoutX="336.0" layoutY="390.0" mnemonicParsing="false" onAction="#goGameOver" prefHeight="25.0" prefWidth="222.0" text="GAME OVER" />
-            <Button layoutX="80.0" layoutY="158.0" mnemonicParsing="false" onAction="#goTurnover" prefHeight="25.0" prefWidth="80.0" text="Turnover" />
-            <Label layoutX="160.0" layoutY="14.0" text="OUR TEAM'S POSSESSION">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <ChoiceBox fx:id="Players1" layoutX="368.0" layoutY="360.0" prefHeight="26.0" prefWidth="158.0" />
-         </children>
-      </AnchorPane>
-   </center>
+<BorderPane prefHeight="500.0" prefWidth="600.0"
+	xmlns="http://javafx.com/javafx/10.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="graphicalUserInterface.game.GameController">
+	<top>
+		<Label text="Game" textAlignment="CENTER"
+			BorderPane.alignment="CENTER">
+			<font>
+				<Font size="24.0" />
+			</font>
+		</Label>
+	</top>
+	<center>
+		<AnchorPane prefHeight="200.0" prefWidth="200.0"
+			BorderPane.alignment="CENTER">
+			<children>
+				<Text layoutX="55.0" layoutY="142.0" strokeType="OUTSIDE"
+					strokeWidth="0.0" text="Pass to?">
+					<font>
+						<Font size="14.0" />
+					</font>
+				</Text>
+				<ChoiceBox fx:id="Players" layoutX="110.0" layoutY="124.0"
+					prefHeight="26.0" prefWidth="158.0" />
+				<Button layoutX="183.0" layoutY="158.0"
+					mnemonicParsing="false" onAction="#goCompletion"
+					text="Confirm Pass" />
+				<Button layoutX="336.0" layoutY="67.0"
+					mnemonicParsing="false" onAction="#goPenalty" prefHeight="140.0"
+					prefWidth="221.0" text="PENALTY" />
+				<Button layoutX="336.0" layoutY="233.0"
+					mnemonicParsing="false" onAction="#goInjury" prefHeight="140.0"
+					prefWidth="221.0" text="INJURY" />
+				<Button layoutX="47.0" layoutY="233.0"
+					mnemonicParsing="false" onAction="#goScore" prefHeight="140.0"
+					prefWidth="221.0" text="SCORE" />
+				<TextField fx:id="textBox" disable="true" layoutX="110.0"
+					layoutY="78.0" mouseTransparent="true" prefHeight="25.0"
+					prefWidth="158.0" />
+				<Text layoutX="14.0" layoutY="96.0" strokeType="OUTSIDE"
+					strokeWidth="0.0" text="Current Player:">
+					<font>
+						<Font size="14.0" />
+					</font>
+				</Text>
+				<Button layoutX="47.0" layoutY="390.0"
+					mnemonicParsing="false" onAction="#goCancel" prefHeight="25.0"
+					prefWidth="222.0" text="CANCEL" />
+				<Button layoutX="336.0" layoutY="390.0"
+					mnemonicParsing="false" onAction="#goGameOver" prefHeight="25.0"
+					prefWidth="222.0" text="GAME OVER" />
+				<Button layoutX="80.0" layoutY="158.0"
+					mnemonicParsing="false" onAction="#goTurnover" prefHeight="25.0"
+					prefWidth="80.0" text="Turnover" />
+				<Label layoutX="160.0" layoutY="14.0"
+					text="OUR TEAM'S POSSESSION">
+					<font>
+						<Font size="24.0" />
+					</font>
+				</Label>
+				<ChoiceBox fx:id="Players1" layoutX="368.0"
+					layoutY="360.0" prefHeight="26.0" prefWidth="158.0" />
+			</children>
+		</AnchorPane>
+	</center>
 </BorderPane>

@@ -9,107 +9,146 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalUserInterface.playerStats.PlayerStatsController">
-   <center>
-      <SplitPane dividerPositions="0.32274247491638797" BorderPane.alignment="CENTER">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <ChoiceBox fx:id="PlayerSelected" layoutX="14.0" layoutY="60.0" prefHeight="25.0" prefWidth="162.0" />
-                  <Button layoutX="23.0" layoutY="438.0" mnemonicParsing="false" onAction="#goHome" prefHeight="60.0" prefWidth="155.0" text="Go Home" />
-                  <Label layoutX="14.0" layoutY="26.0" prefHeight="17.0" prefWidth="116.0" text="Select Player">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="100.0" layoutY="93.0" mnemonicParsing="false" onAction="#getStats" prefHeight="25.0" prefWidth="76.0" text="Select" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <Button layoutX="225.0" layoutY="475.0" mnemonicParsing="false" onAction="#updateStats" prefHeight="53.0" prefWidth="139.0" text="Make Change" />
-                  <TextField fx:id="id" layoutX="160.0" layoutY="14.0" prefHeight="25.0" prefWidth="209.0" />
-                  <TextField fx:id="name" layoutX="161.0" layoutY="47.0" prefHeight="25.0" prefWidth="208.0" />
-                  <TextField fx:id="height" layoutX="161.0" layoutY="78.0" prefHeight="25.0" prefWidth="208.0" />
-                  <TextField fx:id="age" layoutX="162.0" layoutY="110.0" prefHeight="25.0" prefWidth="207.0" />
-                  <TextField fx:id="weight" layoutX="163.0" layoutY="142.0" prefHeight="25.0" prefWidth="206.0" />
-                  <TextField fx:id="dominantHand" layoutX="163.0" layoutY="175.0" prefHeight="25.0" prefWidth="206.0" />
-                  <TextField fx:id="passes" layoutX="163.0" layoutY="206.0" prefHeight="25.0" prefWidth="206.0" />
-                  <TextField fx:id="completions" layoutX="164.0" layoutY="238.0" prefHeight="25.0" prefWidth="205.0" />
-                  <TextField fx:id="catches" layoutX="163.0" layoutY="271.0" prefHeight="25.0" prefWidth="206.0" />
-                  <TextField fx:id="scores" layoutX="162.0" layoutY="304.0" prefHeight="25.0" prefWidth="205.0" />
-                  <TextField fx:id="injured" layoutX="168.0" layoutY="336.0" prefHeight="25.0" prefWidth="202.0" />
-                  <TextField fx:id="games" layoutX="169.0" layoutY="373.0" prefHeight="25.0" prefWidth="201.0" />
-                  <Label layoutX="14.0" layoutY="13.0" prefHeight="17.0" prefWidth="116.0" text="ID">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="141.0" prefHeight="17.0" prefWidth="116.0" text="Weight">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="77.0" prefHeight="17.0" prefWidth="116.0" text="Height">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="109.0" prefHeight="17.0" prefWidth="116.0" text="Age">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="46.0" prefHeight="17.0" prefWidth="116.0" text="Name">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="174.0" prefHeight="27.0" prefWidth="132.0" text="Dominant Hand">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="205.0" prefHeight="17.0" prefWidth="116.0" text="Passes">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="237.0" prefHeight="17.0" prefWidth="116.0" text="Completions">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="268.0" prefHeight="17.0" prefWidth="116.0" text="Catches">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="303.0" prefHeight="17.0" prefWidth="116.0" text="Scores">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="335.0" prefHeight="17.0" prefWidth="116.0" text="Injured">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="14.0" layoutY="372.0" prefHeight="17.0" prefWidth="116.0" text="Game Count">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-   </center>
-   <top>
-      <Label text="Player Stats" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-   </top>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
+	prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="graphicalUserInterface.playerStats.PlayerStatsController">
+	<center>
+		<SplitPane dividerPositions="0.32274247491638797"
+			BorderPane.alignment="CENTER">
+			<items>
+				<AnchorPane minHeight="0.0" minWidth="0.0"
+					prefHeight="160.0" prefWidth="100.0">
+					<children>
+						<ChoiceBox fx:id="PlayerSelected" layoutX="14.0"
+							layoutY="60.0" prefHeight="25.0" prefWidth="162.0" />
+						<Button layoutX="23.0" layoutY="438.0"
+							mnemonicParsing="false" onAction="#goHome" prefHeight="60.0"
+							prefWidth="155.0" text="Go Home" />
+						<Label layoutX="14.0" layoutY="26.0" prefHeight="17.0"
+							prefWidth="116.0" text="Select Player">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Button layoutX="100.0" layoutY="93.0"
+							mnemonicParsing="false" onAction="#getStats" prefHeight="25.0"
+							prefWidth="76.0" text="Select" />
+					</children>
+				</AnchorPane>
+				<AnchorPane minHeight="0.0" minWidth="0.0"
+					prefHeight="160.0" prefWidth="100.0">
+					<children>
+						<Button layoutX="225.0" layoutY="475.0"
+							mnemonicParsing="false" onAction="#updateStats" prefHeight="53.0"
+							prefWidth="139.0" text="Make Change" />
+						<TextField fx:id="id" layoutX="160.0" layoutY="14.0"
+							prefHeight="25.0" prefWidth="209.0" />
+						<TextField fx:id="name" layoutX="161.0" layoutY="47.0"
+							prefHeight="25.0" prefWidth="208.0" />
+						<TextField fx:id="height" layoutX="161.0" layoutY="78.0"
+							prefHeight="25.0" prefWidth="208.0" />
+						<TextField fx:id="age" layoutX="162.0" layoutY="110.0"
+							prefHeight="25.0" prefWidth="207.0" />
+						<TextField fx:id="weight" layoutX="163.0"
+							layoutY="142.0" prefHeight="25.0" prefWidth="206.0" />
+						<TextField fx:id="dominantHand" layoutX="163.0"
+							layoutY="175.0" prefHeight="25.0" prefWidth="206.0" />
+						<TextField fx:id="passes" layoutX="163.0"
+							layoutY="206.0" prefHeight="25.0" prefWidth="206.0" />
+						<TextField fx:id="completions" layoutX="164.0"
+							layoutY="238.0" prefHeight="25.0" prefWidth="205.0" />
+						<TextField fx:id="catches" layoutX="163.0"
+							layoutY="271.0" prefHeight="25.0" prefWidth="206.0" />
+						<TextField fx:id="scores" layoutX="162.0"
+							layoutY="304.0" prefHeight="25.0" prefWidth="205.0" />
+						<TextField fx:id="injured" layoutX="168.0"
+							layoutY="336.0" prefHeight="25.0" prefWidth="202.0" />
+						<TextField fx:id="games" layoutX="169.0" layoutY="373.0"
+							prefHeight="25.0" prefWidth="201.0" />
+						<Label layoutX="14.0" layoutY="13.0" prefHeight="17.0"
+							prefWidth="116.0" text="ID">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Label layoutX="14.0" layoutY="141.0" prefHeight="17.0"
+							prefWidth="116.0" text="Weight">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Label layoutX="14.0" layoutY="77.0" prefHeight="17.0"
+							prefWidth="116.0" text="Height">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Label layoutX="14.0" layoutY="109.0" prefHeight="17.0"
+							prefWidth="116.0" text="Age">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Label layoutX="14.0" layoutY="46.0" prefHeight="17.0"
+							prefWidth="116.0" text="Name">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Label layoutX="14.0" layoutY="174.0" prefHeight="27.0"
+							prefWidth="132.0" text="Dominant Hand">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Label layoutX="14.0" layoutY="205.0" prefHeight="17.0"
+							prefWidth="116.0" text="Passes">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Label layoutX="14.0" layoutY="237.0" prefHeight="17.0"
+							prefWidth="116.0" text="Completions">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Label layoutX="14.0" layoutY="268.0" prefHeight="17.0"
+							prefWidth="116.0" text="Catches">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Label layoutX="14.0" layoutY="303.0" prefHeight="17.0"
+							prefWidth="116.0" text="Scores">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Label layoutX="14.0" layoutY="335.0" prefHeight="17.0"
+							prefWidth="116.0" text="Injured">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+						<Label layoutX="14.0" layoutY="372.0" prefHeight="17.0"
+							prefWidth="116.0" text="Game Count">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Label>
+					</children>
+				</AnchorPane>
+			</items>
+		</SplitPane>
+	</center>
+	<top>
+		<Label text="Player Stats" BorderPane.alignment="CENTER">
+			<font>
+				<Font size="24.0" />
+			</font>
+		</Label>
+	</top>
 </BorderPane>

@@ -7,25 +7,43 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalUserInterface.view.MainItemsController">
-   <center>
-      <AnchorPane prefHeight="500.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button layoutX="52.0" layoutY="200.0" mnemonicParsing="false" onAction="#goCreatePlayer" prefHeight="100.0" prefWidth="120.0" text="Add Player" />
-            <Button layoutX="240.0" layoutY="200.0" mnemonicParsing="false" onAction="#goPreGame" prefHeight="100.0" prefWidth="120.0" text="Play Game" />
-            <Button layoutX="429.0" layoutY="200.0" mnemonicParsing="false" onAction="#goPlayerStats" prefHeight="100.0" prefWidth="120.0" text="View Player Stats" />
-            <ImageView fitHeight="150.0" fitWidth="343.0" layoutX="128.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Title.png" />
-               </image></ImageView>
-            <ImageView fitHeight="150.0" fitWidth="343.0" layoutX="246.0" layoutY="309.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@cerny.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="77.0" layoutY="165.0" text="Iteration 3 written by Caleb DeHaan, Hunter Michalk, Jameson Axton, and Matt Giles" />
-            <Button layoutX="70.0" layoutY="414.0" mnemonicParsing="false" onAction="#exitProgram" prefHeight="39.0" prefWidth="85.0" text="LOGOUT" />
-         </children>
-      </AnchorPane>
-   </center>
+<BorderPane prefHeight="500.0" prefWidth="600.0"
+	xmlns="http://javafx.com/javafx/10.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="graphicalUserInterface.view.MainItemsController">
+	<center>
+		<AnchorPane prefHeight="500.0" prefWidth="600.0"
+			BorderPane.alignment="CENTER">
+			<children>
+				<Button layoutX="52.0" layoutY="200.0"
+					mnemonicParsing="false" onAction="#goCreatePlayer"
+					prefHeight="100.0" prefWidth="120.0" text="Add Player" />
+				<Button layoutX="240.0" layoutY="200.0"
+					mnemonicParsing="false" onAction="#goPreGame" prefHeight="100.0"
+					prefWidth="120.0" text="Play Game" />
+				<Button layoutX="429.0" layoutY="200.0"
+					mnemonicParsing="false" onAction="#goPlayerStats"
+					prefHeight="100.0" prefWidth="120.0" text="View Player Stats" />
+				<ImageView fitHeight="150.0" fitWidth="343.0"
+					layoutX="128.0" layoutY="34.0" pickOnBounds="true"
+					preserveRatio="true">
+					<image>
+						<Image url="@Title.png" />
+					</image>
+				</ImageView>
+				<ImageView fitHeight="150.0" fitWidth="343.0"
+					layoutX="246.0" layoutY="309.0" pickOnBounds="true"
+					preserveRatio="true">
+					<image>
+						<Image url="@cerny.png" />
+					</image>
+				</ImageView>
+				<Label layoutX="77.0" layoutY="165.0"
+					text="Iteration 3 written by Caleb DeHaan, Hunter Michalk, Jameson Axton, and Matt Giles" />
+				<Button layoutX="70.0" layoutY="414.0"
+					mnemonicParsing="false" onAction="#exitProgram" prefHeight="39.0"
+					prefWidth="85.0" text="LOGOUT" />
+			</children>
+		</AnchorPane>
+	</center>
 </BorderPane>

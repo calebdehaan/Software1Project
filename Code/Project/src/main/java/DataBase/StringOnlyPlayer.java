@@ -7,36 +7,36 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class StringOnlyPlayer {
 	private SimpleStringProperty height;
-    private SimpleStringProperty weight;
-    private SimpleStringProperty age;
-    private SimpleStringProperty id;
-    private SimpleStringProperty name;
-    private SimpleStringProperty domHand;
-    
-    private SimpleStringProperty passes;
-    private SimpleStringProperty completions;
-    private SimpleStringProperty catches;
-    private SimpleStringProperty scores;
-    private SimpleStringProperty injured;
-    private SimpleStringProperty gamesPlayed;
-    
-    private SimpleStringProperty completionRate;
-    
-    public StringOnlyPlayer(Player p) {
-    	this.setHeight(new SimpleStringProperty(p.getHeight().toString()));
-    	this.setWeight(new SimpleStringProperty(p.getWeight().toString()));
-    	this.setAge(new SimpleStringProperty(Integer.toString(p.getAge())));
-    	this.setId(new SimpleStringProperty(Long.toString(p.getId())));
-    	this.setName(new SimpleStringProperty(p.getName()));
-    	this.setDomHand(new SimpleStringProperty(p.getDomHand().toString()));
-    	this.setPasses(new SimpleStringProperty(Integer.toString(p.getPasses())));
-    	this.setCompletions(new SimpleStringProperty(Integer.toString(p.getCompletions())));
-    	this.setCatches(new SimpleStringProperty(Integer.toString(p.getCatches())));
-    	this.scores = new SimpleStringProperty(Integer.toString(p.getScores()));
-    	this.setInjured(new SimpleStringProperty(Boolean.toString(p.getInjured())));
-    	this.setGamesPlayed(new SimpleStringProperty(Integer.toString(p.getGamesPlayed())));
-    	this.setCompletionRate(new SimpleStringProperty(Double.toString(p.getCompletionRate())));
-    }
+	private SimpleStringProperty weight;
+	private SimpleStringProperty age;
+	private SimpleStringProperty id;
+	private SimpleStringProperty name;
+	private SimpleStringProperty domHand;
+
+	private SimpleStringProperty passes;
+	private SimpleStringProperty completions;
+	private SimpleStringProperty catches;
+	private SimpleStringProperty scores;
+	private SimpleStringProperty injured;
+	private SimpleStringProperty gamesPlayed;
+
+	private SimpleStringProperty completionRate;
+
+	public StringOnlyPlayer(Player p) {
+		this.setHeight(new SimpleStringProperty(p.getHeight().toString()));
+		this.setWeight(new SimpleStringProperty(p.getWeight().toString()));
+		this.setAge(new SimpleStringProperty(Integer.toString(p.getAge())));
+		this.setId(new SimpleStringProperty(Long.toString(p.getId())));
+		this.setName(new SimpleStringProperty(p.getName()));
+		this.setDomHand(new SimpleStringProperty(p.getDomHand().toString()));
+		this.setPasses(new SimpleStringProperty(Integer.toString(p.getPasses())));
+		this.setCompletions(new SimpleStringProperty(Integer.toString(p.getCompletions())));
+		this.setCatches(new SimpleStringProperty(Integer.toString(p.getCatches())));
+		this.scores = new SimpleStringProperty(Integer.toString(p.getScores()));
+		this.setInjured(new SimpleStringProperty(Boolean.toString(p.getInjured())));
+		this.setGamesPlayed(new SimpleStringProperty(Integer.toString(p.getGamesPlayed())));
+		this.setCompletionRate(new SimpleStringProperty(Double.toString(p.getCompletionRate())));
+	}
 
 	public SimpleStringProperty getHeight() {
 		return height;
@@ -141,6 +141,5 @@ public class StringOnlyPlayer {
 	public void setCompletionRate(SimpleStringProperty completionRate) {
 		this.completionRate = completionRate;
 	}
-    
-    
+
 }
