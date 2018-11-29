@@ -4,6 +4,7 @@ import DataBase.Player;
 
 import java.util.Map;
 
+// Visitor
 public class ActionVisitor {
     private Map<Long, Player> roster;
     

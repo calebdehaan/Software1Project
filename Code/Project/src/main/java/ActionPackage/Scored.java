@@ -1,7 +1,7 @@
 package ActionPackage;
 
 public class Scored extends Action {
-    Scored(Long id, String desc) {
+    public Scored(Long id, String desc) {
         super(id, desc);
         this.actionName = ActionEnum.SCORE;
     }

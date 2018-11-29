@@ -2,7 +2,7 @@ package ActionPackage;
 
 public class Injury extends Action {
     
-    Injury(Long id, String desc) {
+    public Injury(Long id, String desc) {
         super(id, desc);
         this.actionName = ActionEnum.INJURY;
     }
@@ -25,5 +25,4 @@ public class Injury extends Action {
                        ", description='" + description + '\'' +
                        '}';
     }
-    
 }
