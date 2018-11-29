@@ -31,7 +31,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		this.primaryStage = primaryStage;
-		this.primaryStage.setTitle("Main Application");
+		this.primaryStage.setTitle("Frisbee Fun Software I");
 		showMainView();
 		showLoginPage();
 	}
