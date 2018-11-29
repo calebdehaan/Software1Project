@@ -9,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import graphicalUserInterface.Main;
+import graphicalUserInterface.game.GameController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -45,7 +46,7 @@ public class PreGameController {
 	}
 	
 	@FXML
-	private void goGame() throws IOException {
+	private void goGame() throws IOException, SQLException {
 		ArrayList<String> tempArray = new ArrayList<String>();
 		tempArray.add(Player1.getValue().toString());
 		tempArray.add(Player2.getValue().toString());
@@ -54,7 +55,13 @@ public class PreGameController {
 		tempArray.add(Player5.getValue().toString());
 		tempArray.add(Player6.getValue().toString());
 		tempArray.add(Player7.getValue().toString());
-		main.showGameScene(tempArray);
+		Connection dbConnection = getDBConnection();
+		Statement statement = dbConnection.createStatement();
+		statement.execute("Delete from theprojectdata.currentplayers");
+		for(int i=0;i<tempArray.size();i++) {
+			statement.execute("Insert into TheProjectData.CurrentPlayers values(\'" + (i+1) + "\', \'" + tempArray.get(i) + "\');");
+		}
+		main.showGameScene();
 	}
 	
 	@FXML
