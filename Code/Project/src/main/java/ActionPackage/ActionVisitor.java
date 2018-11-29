@@ -3,9 +3,12 @@ package ActionPackage;
 import DataBase.Player;
 
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 // Visitor
 public class ActionVisitor {
+    public static final Logger logger = Logger.getLogger(ActionVisitor.class.getName());
     private Map<Long, Player> roster;
     
     public ActionVisitor(Map<Long, Player> team) {
@@ -28,7 +31,7 @@ public class ActionVisitor {
      * @param a the action
      */
     public void accept(Action a) {
-        System.out.println(a.getDescription());
+        logger.log(Level.WARNING, a.getDescription());
     }
     
     /**
