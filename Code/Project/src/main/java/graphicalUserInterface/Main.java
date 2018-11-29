@@ -4,6 +4,7 @@ import java.awt.desktop.ScreenSleepEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import graphicalUserInterface.game.GameController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,8 +15,6 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	private static Stage primaryStage;
 	private static BorderPane mainLayout;
-	
-	private static ArrayList<String> cp;
 
 	@Override
 	public void start(Stage primaryStage) throws IOException {
@@ -29,7 +28,7 @@ public class Main extends Application {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("view/MainView.fxml"));
 		mainLayout = loader.load();
-		Scene scene = new Scene(mainLayout,800,600);
+		Scene scene = new Scene(mainLayout, 800, 600);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
@@ -46,16 +45,15 @@ public class Main extends Application {
 		loader.setLocation(Main.class.getResource("createNewPlayer/CreatePlayer.fxml"));
 		BorderPane createPlayer = loader.load();
 		mainLayout.setCenter(createPlayer);
-		
+
 		/*
-		Stage addDialogStage = new Stage();
-		addDialogStage.setTitle("Add new Player");
-		addDialogStage.initModality(Modality.WINDOW_MODAL);
-		addDialogStage.initOwner(primaryStage);
-		Scene scene = new Scene(createPlayer);
-		addDialogStage.setScene(scene);
-		addDialogStage.showAndWait();
-		*/
+		 * Stage addDialogStage = new Stage();
+		 * addDialogStage.setTitle("Add new Player");
+		 * addDialogStage.initModality(Modality.WINDOW_MODAL);
+		 * addDialogStage.initOwner(primaryStage); Scene scene = new
+		 * Scene(createPlayer); addDialogStage.setScene(scene);
+		 * addDialogStage.showAndWait();
+		 */
 	}
 
 	public static void showPreGameScene() throws IOException {
@@ -65,12 +63,10 @@ public class Main extends Application {
 		mainLayout.setCenter(createPlayer);
 	}
 
-	public static void showGameScene(ArrayList<String> currentPlayers) throws IOException {
+	public static void showGameScene() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("game/Game.fxml"));
 		BorderPane createPlayer = loader.load();
-		cp = currentPlayers;
-		System.out.println("Hey");
 		mainLayout.setCenter(createPlayer);
 	}
 
@@ -81,36 +77,28 @@ public class Main extends Application {
 		mainLayout.setCenter(createPlayer);
 	}
 
-	public static void showTurnoverScene() throws IOException{
+	public static void showTurnoverScene() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("turnover/Turnover.fxml"));
 		BorderPane createPlayer = loader.load();
 		mainLayout.setCenter(createPlayer);
 	}
-	
-	public static void showPlayerStatsScene() throws IOException{
+
+	public static void showPlayerStatsScene() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("playerStats/PlayerStats.fxml"));
 		BorderPane createPlayer = loader.load();
 		mainLayout.setCenter(createPlayer);
 	}
-	
-	public static void showCreateNewPlayerVerificationScene() throws IOException{
+
+	public static void showCreateNewPlayerVerificationScene() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("createNewPlayerVerification/CreateNewPlayerVerification.fxml"));
 		BorderPane createPlayer = loader.load();
 		mainLayout.setCenter(createPlayer);
 	}
-	
+
 	public static void main(String[] args) {
 		launch(args);
-	}
-
-	public static ArrayList<String> getCp() {
-		return cp;
-	}
-
-	public static void setCp(ArrayList<String> cp) {
-		Main.cp = cp;
 	}
 }

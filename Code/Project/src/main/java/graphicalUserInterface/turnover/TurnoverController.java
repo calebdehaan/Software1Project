@@ -3,6 +3,7 @@ package graphicalUserInterface.turnover;
 import java.io.IOException;
 
 import graphicalUserInterface.Main;
+import graphicalUserInterface.game.GameController;
 import javafx.fxml.FXML;
 
 public class TurnoverController {
@@ -20,7 +21,7 @@ public class TurnoverController {
 	
 	@FXML
 	private void goGame() throws IOException {
-		main.showGameScene(main.getCp());
+		main.showGameScene();
 	}
 	
 	@FXML
