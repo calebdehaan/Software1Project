@@ -8,13 +8,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayDeque;
-import java.util.Deque;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 // toString uses StringBuilder, which uses the Builder Design Pattern.
-public class GameHandler {
+public class GameHandler extends GameHandlerFactory{
     private static final String DB_DRIVER = "org.gjt.mm.mysql.Driver";
     private static final String DB_CONNECTION = "jdbc:mysql://localhost/Database";
     private static final String DB_USER = "TheUser";
@@ -23,8 +20,12 @@ public class GameHandler {
     private Map<Long, Player> playerList;
     private Deque<Action> stack = new ArrayDeque<>();
 
-    GameHandler(Map<Long, Player> roster) {
-        playerList = roster;
+    protected GameHandler() {
+        this(new HashMap<>());
+    }
+
+    protected GameHandler(Map<Long, Player> roster) {
+        playerList = Objects.requireNonNull(roster);
     }
 
     public void newAction(Action a) {
@@ -45,19 +46,18 @@ public class GameHandler {
      */
     public void recordAll() throws SQLException {
         ActionVisitor visitor = new ActionVisitor(playerList);
-        Connection dbConnection = null;
-        Statement statement = null;
-        String theQuery = "";
-        System.out.println("HEY");
+        Connection dbConnection;
+        Statement statement;
+        String query;
 
         while (!stack.isEmpty()) {
             stack.getFirst().visit(visitor);
             dbConnection = getDBConnection();
             statement = dbConnection.createStatement();
-            System.out.println(stack.getFirst().getId());
+            //System.out.println(stack.getFirst().getId());
             if (stack.getFirst().getActionName().equals(ActionEnum.PASSCOMPLETE)) {
-                theQuery = "UPDATE Player SET Passes = Passes + 1, Completions = Completions + 1 WHERE idPlayer = " + stack.getFirst().getId();
-                System.out.println(theQuery);
+                query = "UPDATE Player SET Passes = Passes + 1, Completions = Completions + 1 WHERE idPlayer = " + stack.getFirst().getId();
+                //System.out.println(query);
             }
             stack.removeFirst();
         }
