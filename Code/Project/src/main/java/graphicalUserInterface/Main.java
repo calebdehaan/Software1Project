@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.logging.Level;
@@ -22,14 +23,47 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	public static final Logger logger = Logger.getLogger(GameHandler.class.getName());
 	private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
-	private static final String DB_CONNECTION = "jdbc:mysql://localhost/TheProjectData";
+	private static final String DB_CONNECTION = "jdbc:mysql://localhost/";
 	private static final String DB_USER = "root";
 	private static final String DB_PASSWORD = "Digby1097";
 	private static Stage primaryStage;
 	private static BorderPane mainLayout;
 
 	@Override
-	public void start(Stage primaryStage) throws IOException {
+	public void start(Stage primaryStage) throws IOException, SQLException {
+		Connection dbConnection = getDBConnection();
+		Statement statement = dbConnection.createStatement();
+		statement.execute("Create Database if not exists theprojectdata");
+		statement.execute("create table if not exists theprojectdata.player (" +
+				"`idPlayer` INT NOT NULL AUTO_INCREMENT, " + 
+				"  `Height` VARCHAR(45) NOT NULL, " + 
+				"  `Weight` VARCHAR(45) NOT NULL, " + 
+				"  `Age` INT NOT NULL, " + 
+				"  `Name` VARCHAR(45) NOT NULL, " + 
+				"  `Hand` VARCHAR(45) NOT NULL, " + 
+				"  `Passes` INT NOT NULL, " + 
+				"  `Completions` INT NOT NULL, " + 
+				"  `Catches` INT NOT NULL, " + 
+				"  `Scores` INT NOT NULL, " + 
+				"  `Injured` TINYINT NOT NULL, " + 
+				"  `GamesPlayed` INT NOT NULL)," +
+				"  PRIMARY KEY (`idPlayer`)," +
+				"  UNIQUE INDEX `idPlayer_UNIQUE` (`idPlayer` ASC) VISIBLE");
+		statement.execute("CREATE TABLE IF NOT EXISTS `TheProjectData`.`Team` (" + 
+				"  `idTeam` INT NOT NULL AUTO_INCREMENT, " + 
+				"  `idPlayer` INT NOT NULL, " + 
+				"  `Alumni` TINYINT NOT NULL, " + 
+				"  `Admin` TINYINT NOT NULL, " + 
+				"  PRIMARY KEY (`idTeam`, `idPlayer`))");
+		statement.execute("CREATE TABLE IF NOT EXISTS `TheProjectData`.`User` ( " + 
+				"  `idUser` INT UNSIGNED NOT NULL, " + 
+				"  `userName` VARCHAR(45) NOT NULL, " + 
+				"  `idPlayer` INT NOT NULL, " + 
+				"  PRIMARY KEY (`idUser`, `idPlayer`), " + 
+				"  UNIQUE INDEX `idUser_UNIQUE` (`idUser` ASC) VISIBLE)");
+		statement.execute("CREATE TABLE IF NOT EXISTS `TheProjectData`.`CurrentPlayers` ( " +
+				"  `idPlayer` INT NOT NULL, " +
+				"  `name` VARCHAR(45) NOT NULL)");
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Frisbee Fun Software I");
 		showMainView();
