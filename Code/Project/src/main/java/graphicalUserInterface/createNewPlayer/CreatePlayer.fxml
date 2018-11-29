@@ -12,70 +12,89 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalUserInterface.createNewPlayer.CreatePlayerController">
-   <top>
-      <Label text="Add Player" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-   </top>
-   <bottom>
-      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <items>
-          <Button mnemonicParsing="false" onAction="#goCancel" text="Cancel" textAlignment="CENTER" />
-            <Button mnemonicParsing="false" onAction="#goConfirm" text="Add" />
-        </items>
-         <padding>
-            <Insets left="500.0" />
-         </padding>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-      </ToolBar>
-   </bottom>
-   <center>
-      <SplitPane dividerPositions="0.4280936454849498" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <Text layoutX="131.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Name:">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="131.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Height (cm):">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="114.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dominant Hand:">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="131.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight (kg):">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="162.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age:">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="331.0" prefWidth="335.0">
-               <children>
-                  <TextField fx:id="nameField" layoutX="20.0" layoutY="14.0" prefHeight="30.0" prefWidth="300.0" />
-                  <TextField fx:id="weightField" layoutX="20.0" layoutY="63.0" prefHeight="30.0" prefWidth="300.0" />
-                  <TextField fx:id="heightField" layoutX="20.0" layoutY="107.0" prefHeight="30.0" prefWidth="300.0" />
-                  <ChoiceBox fx:id="ageBox" layoutX="20.0" layoutY="151.0" prefHeight="30.0" prefWidth="300.0" />
-                  <ChoiceBox fx:id="dominantHandBox" layoutX="20.0" layoutY="197.0" prefHeight="30.0" prefWidth="300.0" />
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-   </center>
+<BorderPane prefHeight="400.0" prefWidth="600.0"
+	xmlns="http://javafx.com/javafx/10.0.1"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="graphicalUserInterface.createNewPlayer.CreatePlayerController">
+	<top>
+		<Label text="Add Player" BorderPane.alignment="CENTER">
+			<font>
+				<Font size="18.0" />
+			</font>
+		</Label>
+	</top>
+	<bottom>
+		<ToolBar prefHeight="40.0" prefWidth="200.0"
+			BorderPane.alignment="CENTER">
+			<items>
+				<Button mnemonicParsing="false" onAction="#goCancel"
+					text="Cancel" textAlignment="CENTER" />
+				<Button mnemonicParsing="false" onAction="#goConfirm"
+					text="Add" />
+			</items>
+			<padding>
+				<Insets left="500.0" />
+			</padding>
+			<BorderPane.margin>
+				<Insets />
+			</BorderPane.margin>
+		</ToolBar>
+	</bottom>
+	<center>
+		<SplitPane dividerPositions="0.4280936454849498"
+			prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+			<items>
+				<AnchorPane minHeight="0.0" minWidth="0.0"
+					prefHeight="160.0" prefWidth="100.0">
+					<children>
+						<Text layoutX="131.0" layoutY="33.0" strokeType="OUTSIDE"
+							strokeWidth="0.0" text="Enter Name:">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Text>
+						<Text layoutX="131.0" layoutY="126.0" strokeType="OUTSIDE"
+							strokeWidth="0.0" text="Height (cm):">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Text>
+						<Text layoutX="114.0" layoutY="218.0" strokeType="OUTSIDE"
+							strokeWidth="0.0" text="Dominant Hand:">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Text>
+						<Text layoutX="131.0" layoutY="82.0" strokeType="OUTSIDE"
+							strokeWidth="0.0" text="Weight (kg):">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Text>
+						<Text layoutX="162.0" layoutY="172.0" strokeType="OUTSIDE"
+							strokeWidth="0.0" text="Age:">
+							<font>
+								<Font size="18.0" />
+							</font>
+						</Text>
+					</children>
+				</AnchorPane>
+				<AnchorPane minHeight="0.0" minWidth="0.0"
+					prefHeight="331.0" prefWidth="335.0">
+					<children>
+						<TextField fx:id="nameField" layoutX="20.0"
+							layoutY="14.0" prefHeight="30.0" prefWidth="300.0" />
+						<TextField fx:id="weightField" layoutX="20.0"
+							layoutY="63.0" prefHeight="30.0" prefWidth="300.0" />
+						<TextField fx:id="heightField" layoutX="20.0"
+							layoutY="107.0" prefHeight="30.0" prefWidth="300.0" />
+						<ChoiceBox fx:id="ageBox" layoutX="20.0" layoutY="151.0"
+							prefHeight="30.0" prefWidth="300.0" />
+						<ChoiceBox fx:id="dominantHandBox" layoutX="20.0"
+							layoutY="197.0" prefHeight="30.0" prefWidth="300.0" />
+					</children>
+				</AnchorPane>
+			</items>
+		</SplitPane>
+	</center>
 </BorderPane>

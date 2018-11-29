@@ -1,36 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/10.0.1"
-	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="graphicalUserInterface.turnover.TurnoverController">
+<BorderPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicalUserInterface.turnover.TurnoverController">
 	<center>
 		<AnchorPane prefHeight="500.0" prefWidth="600.0">
 			<children>
-				<Button layoutX="222.0" layoutY="193.0"
-					mnemonicParsing="false" onAction="#goGame" prefHeight="67.0"
-					prefWidth="156.0" text="TURNOVER" />
-				<Button layoutX="222.0" layoutY="277.0"
-					mnemonicParsing="false" onAction="#goGameOver" prefHeight="67.0"
-					prefWidth="156.0" text="GAME OVER" />
-				<ChoiceBox layoutX="144.0" layoutY="136.0"
-					prefHeight="29.0" prefWidth="312.0" />
-				<Label layoutX="148.0" layoutY="48.0" prefHeight="35.0"
-					prefWidth="305.0" text="OTHER TEAM'S POSSESSION"
-					textAlignment="CENTER">
+				<Button layoutX="222.0" layoutY="193.0" mnemonicParsing="false" onAction="#goGame" prefHeight="67.0" prefWidth="156.0" text="TURNOVER" />
+				<Button layoutX="222.0" layoutY="277.0" mnemonicParsing="false" onAction="#goGameOver" prefHeight="67.0" prefWidth="156.0" text="GAME OVER" />
+				<Label layoutX="148.0" layoutY="48.0" prefHeight="35.0" prefWidth="305.0" text="OTHER TEAM'S POSSESSION" textAlignment="CENTER">
 					<font>
 						<Font size="24.0" />
 					</font>
 				</Label>
-				<Button layoutX="222.0" layoutY="362.0"
-					mnemonicParsing="false" onAction="#goCancel" prefHeight="67.0"
-					prefWidth="156.0" text="CANCEL" />
+				<Button layoutX="222.0" layoutY="362.0" mnemonicParsing="false" onAction="#goCancel" prefHeight="67.0" prefWidth="156.0" text="CANCEL" />
 			</children>
 		</AnchorPane>
 	</center>
