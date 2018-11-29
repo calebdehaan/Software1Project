@@ -1,5 +1,6 @@
 package graphicalUserInterface;
 
+import java.awt.Window;
 import java.awt.desktop.ScreenSleepEvent;
 import java.io.IOException;
 import java.sql.Connection;
@@ -16,6 +17,7 @@ import graphicalUserInterface.game.GameController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -66,6 +68,7 @@ public class Main extends Application {
 				"  `name` VARCHAR(45) NOT NULL)");
 		this.primaryStage = primaryStage;
 		this.primaryStage.setTitle("Frisbee Fun Software I");
+		primaryStage.getIcons().add(new Image(this.getClass().getResourceAsStream("view/cerny.png")));
 		showMainView();
 		showLoginPage();
 	}
